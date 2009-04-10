@@ -1,0 +1,19 @@
+In order to use the Google Maps example in businessSearch.html, you will need
+to obtain a Google Maps API key and a "Yelp Web Service ID" (ywsid). Once you
+have these keys, insert them into the source code at the appropiate places.
+
+
+Useful Links:
+
+Where to obtain a Google Maps API Key:
+	http://www.google.com/apis/maps/signup.html
+
+Where to obtain a "Yelp Web Services ID" (ywsid):
+	http://www.yelp.com/developers/getting_started/api_access
+
+Yelp API Documentation:
+	http://www.yelp.com/developers/documentation
+
+Yelp API Support Forum:
+	http://groups.google.com/group/yelp-developer-support
+
