@@ -18,7 +18,7 @@ users of these APIs will be able to:
 The default output is JSON (JavaScript Object Notation), this output
 format was chosen due to the availability of JSON parsers in many
 languages. For more details on JSON and to obtain parsers please
-reference www.json.org
+reference [http://www.json.org](json.org)
 
 This directory contains examples and libraries for working with the
 Yelp API.
