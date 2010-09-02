@@ -16,7 +16,7 @@ parser.add_option('-l', '--location', dest='location', help='Location (address)'
 parser.add_option('-b', '--bounds', dest='bounds', help='Bounds (sw_latitude,sw_longitude|ne_latitude,ne_longitude)')
 parser.add_option('-p', '--point', dest='point', help='Latitude,longitude')
 # Not sure if current location hints are currently working
-#parser.add_option('-i', '--current_location', dest='current_location', help='Current location latitude,longitude for location disambiguation')
+parser.add_option('-i', '--current_location', dest='current_location', help='Current location latitude,longitude for location disambiguation')
 
 parser.add_option('-o', '--offset', dest='offset', help='Offset (starting position)')
 parser.add_option('-r', '--limit', dest='limit', help='Limit (number of results to return)')
