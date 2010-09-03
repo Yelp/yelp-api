@@ -5,12 +5,9 @@ consumer_key = ''
 consumer_secret = ''
 token = ''
 token_secret = ''
-api_host = 'api.yelp.com'
-
-api_path_check_ins = '/v2/check_ins'
 
 consumer = oauth2.Consumer(consumer_key, consumer_secret)
-url = 'http://%s%s' % (api_host, api_path_check_ins)
+url = 'http://api.yelp.com/v2/search'
 
 print 'URL: %s' % (url,)
 
