@@ -54,10 +54,13 @@ def request(host, path, url_params, consumer_key, consumer_secret, token, token_
   print 'Signed URL: %s\n' % (signed_url,)
 
   # Connect
-  conn = urllib2.urlopen(signed_url, None)
   try:
-    response = json.loads(conn.read())
-  finally:
-    conn.close()
+    conn = urllib2.urlopen(signed_url, None)
+    try:
+      response = json.loads(conn.read())
+    finally:
+      conn.close()
+  except urllib2.HTTPError, error:
+    response = json.loads(error.read())
 
   return response
