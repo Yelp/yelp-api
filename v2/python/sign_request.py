@@ -1,3 +1,5 @@
+"""Example for signing a search request using the oauth2 library."""
+
 import oauth2
 
 # Fill in these values
@@ -7,7 +9,7 @@ token = ''
 token_secret = ''
 
 consumer = oauth2.Consumer(consumer_key, consumer_secret)
-url = 'http://api.yelp.com/v2/search'
+url = 'http://api.yelp.com/v2/search?term=bars&location=sf'
 
 print 'URL: %s' % (url,)
 
