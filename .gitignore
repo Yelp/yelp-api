@@ -2,4 +2,6 @@
 .tmp_credentials
 *.pyc
 backup
-ios
+build
+*.pbxuser
+*.mode1v3
