@@ -26,6 +26,7 @@ parser.add_option('-u', '--cc', dest='cc', help='Country code')
 parser.add_option('-n', '--lang', dest='lang', help='Language code')
 
 parser.add_option('-d', '--radius', dest='radius', help='Radius filter (in meters)')
+parser.add_option('-g', '--category', dest='category', help='Category filter')
 
 
 options, args = parser.parse_args()
@@ -65,6 +66,8 @@ if options.current_location:
   url_params['cll'] = options.current_location
 if options.radius:
   url_params['radius_filter'] = options.radius
+if options.category:
+  url_params['category_filter'] = options.category
 
 
 def request(host, path, url_params, consumer_key, consumer_secret, token, token_secret):
