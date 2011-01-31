@@ -3,7 +3,6 @@
  For a more complete example (how to integrate with GSON, etc) see the blog post above.
  */
 
-
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -18,7 +17,7 @@ import org.scribe.model.Verb;
 import org.scribe.oauth.OAuthService;
 
 /**
- * Example for accessing the YelpAPI.
+ * Example for accessing the Yelp API.
  */
 public class Yelp {
 
@@ -26,14 +25,14 @@ public class Yelp {
   Token accessToken;
 
   /**
-   * Example.
+   * Setup the Yelp API OAuth credentials.
    *
    * OAuth credentials are available from the developer site, under Manage API access (version 2 API).
-   * 
+   *
    * @param consumerKey Consumer key
    * @param consumerSecret Consumer secret
    * @param token Token
-   * @param tokenSecret
+   * @param tokenSecret Token secret
    */
   public Yelp(String consumerKey, String consumerSecret, String token, String tokenSecret) {
     this.service = new ServiceBuilder().provider(YelpApi2.class).apiKey(consumerKey).apiSecret(consumerSecret).build();
@@ -42,6 +41,7 @@ public class Yelp {
 
   /**
    * Search with term and location.
+   *
    * @param term Search term
    * @param latitude Latitude
    * @param longitude Longitude
@@ -58,7 +58,6 @@ public class Yelp {
 
   // CLI
   public static void main(String[] args) {
-
     // Update tokens here from Yelp developers site, Manage API access.
     String consumerKey = "";
     String consumerSecret = "";
@@ -69,6 +68,5 @@ public class Yelp {
     String response = yelp.search("burritos", 30.361471, -87.164326);
 
     System.out.println(response);
-
   }
 }
