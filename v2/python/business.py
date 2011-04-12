@@ -43,10 +43,11 @@ path = '/v2/business/%s' % (options.id,)
 def request(host, path, url_params, consumer_key, consumer_secret, token, token_secret):
   """Returns response for API request."""
   # Unsigned URL
-  encoded_params = None
   if url_params:
     encoded_params = urllib.urlencode(url_params)
-  url = 'http://%s%s?%s' % (host, path, encoded_params)
+    url = 'http://%s%s?%s' % (host, path, encoded_params)
+  else:
+    url = 'http://%s%s' % (host, path)
   print 'URL: %s' % (url,)
 
   # Sign the URL
