@@ -76,7 +76,7 @@ if options.sort:
 def request(host, path, url_params, consumer_key, consumer_secret, token, token_secret):
   """Returns response for API request."""
   # Unsigned URL
-  encoded_params = None
+  encoded_params = ''
   if url_params:
     encoded_params = urllib.urlencode(url_params)
   url = 'http://%s%s?%s' % (host, path, encoded_params)
