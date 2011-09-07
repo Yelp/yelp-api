@@ -1,3 +1,9 @@
+
+<!--
+This example is a proof of concept, for how to use the Yelp v2 API with javascript.
+You wouldn't actually want to expose your access token secret like this in a real application.
+-->
+
 <html> 
 <head> 
 <title>Yelp OAuth Example</title> 
@@ -13,6 +19,8 @@ var auth = {
   consumerKey: "YOUR_CONSUMER_KEY",
   consumerSecret: "YOUR_CONSUMER_SECRET",
   accessToken: "YOUR_TOKEN",
+  // This example is a proof of concept, for how to use the Yelp v2 API with javascript.
+  // You wouldn't actually want to expose your access token secret like this in a real application.
   accessTokenSecret: "YOUR_TOKEN_SECRET",
   serviceProvider: { 
     signatureMethod: "HMAC-SHA1"
