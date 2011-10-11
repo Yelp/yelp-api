@@ -27,6 +27,7 @@ parser.add_option('-n', '--lang', dest='lang', help='Language code')
 
 parser.add_option('-d', '--radius', dest='radius', help='Radius filter (in meters)')
 parser.add_option('-g', '--category', dest='category', help='Category filter')
+parser.add_option('-z', '--deals', dest='deals', help='Deals filter')
 parser.add_option('-m', '--sort', dest='sort', help='Sort')
 
 
@@ -69,6 +70,8 @@ if options.radius:
   url_params['radius_filter'] = options.radius
 if options.category:
   url_params['category_filter'] = options.category
+if options.deals:
+  url_params['deals_filter'] = options.deals
 if options.sort:
   url_params['sort'] = options.sort
 
