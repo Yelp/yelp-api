@@ -7,7 +7,7 @@ You wouldn't actually want to expose your access token secret like this in a rea
 <html> 
 <head> 
 <title>Yelp OAuth Example</title> 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script> 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script> 
 <script type="text/javascript" src="http://oauth.googlecode.com/svn/code/javascript/oauth.js"></script>
 <script type="text/javascript" src="http://oauth.googlecode.com/svn/code/javascript/sha1.js"></script>
 <script type="text/javascript" src="https://raw.github.com/padolsey/prettyPrint.js/master/prettyprint.js"></script>
@@ -59,6 +59,7 @@ console.log(parameterMap);
 $.ajax({
   'url': message.action,
   'data': parameterMap,
+  'cache':true,
   'dataType': 'jsonp',
   'jsonpCallback': 'cb',
   'success': function(data, textStats, XMLHttpRequest) {
