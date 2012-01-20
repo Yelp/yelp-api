@@ -54,6 +54,7 @@ OAuth.setTimestampAndNonce(message);
 OAuth.SignatureMethod.sign(message, accessor);
 
 var parameterMap = OAuth.getParameterMap(message.parameters);
+parameterMap.oauth_signature = parameterMap.oauth_signature.replace(/\+/g,'%2B');
 console.log(parameterMap);
 
 $.ajax({
