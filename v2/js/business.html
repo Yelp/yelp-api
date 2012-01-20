@@ -54,6 +54,7 @@ console.log(parameterMap);
 $.ajax({
   'url': message.action,
   'data': parameterMap,
+  'cache': true,
   'dataType': 'jsonp',
   'jsonpCallback': 'cb',
   'success': function(data, textStats, XMLHttpRequest) {
