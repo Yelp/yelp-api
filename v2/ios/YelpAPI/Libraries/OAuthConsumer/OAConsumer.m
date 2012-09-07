@@ -31,11 +31,18 @@
 
 #pragma mark init
 
-- (id)initWithKey:(const NSString *)aKey secret:(const NSString *)aSecret {
-	[super init];
-	self.key = [aKey retain];
-	self.secret = [aSecret retain];
+- (id)initWithKey:(NSString *)aKey secret:(NSString *)aSecret {
+	if ((self = [super init])) {
+		self.key = aKey;
+		self.secret = aSecret;
+	}
 	return self;
+}
+
+- (void)dealloc {
+	[key release];
+	[secret release];
+	[super dealloc];
 }
 
 - (BOOL)isEqual:(id)object {

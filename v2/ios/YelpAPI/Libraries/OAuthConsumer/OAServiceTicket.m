@@ -31,12 +31,20 @@
 @synthesize request, response, data, didSucceed;
 
 - (id)initWithRequest:(OAMutableURLRequest *)aRequest response:(NSURLResponse *)aResponse data:(NSData *)aData didSucceed:(BOOL)success {
-    [super init];
-    request = aRequest;
-    response = aResponse;
-	data = aData;
-    didSucceed = success;
+    if ((self = [super init])) {
+		request = [aRequest retain];
+		response = [aResponse retain];
+		data = [aData retain];
+		didSucceed = success;
+	}
     return self;
+}
+
+- (void)dealloc {
+	[request release];
+	[response release];
+	[data release];
+	[super dealloc];
 }
 
 - (NSString *)body

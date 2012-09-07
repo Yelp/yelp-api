@@ -8,29 +8,30 @@
 
 #import "OAProblem.h"
 
-const NSString *signature_method_rejected = @"signature_method_rejected";
-const NSString *parameter_absent = @"parameter_absent";
-const NSString *version_rejected = @"version_rejected";
-const NSString *consumer_key_unknown = @"consumer_key_unknown";
-const NSString *token_rejected = @"token_rejected";
-const NSString *signature_invalid = @"signature_invalid";
-const NSString *nonce_used = @"nonce_used";
-const NSString *timestamp_refused = @"timestamp_refused";
-const NSString *token_expired = @"token_expired";
-const NSString *token_not_renewable = @"token_not_renewable";
+NSString *signature_method_rejected = @"signature_method_rejected";
+NSString *parameter_absent = @"parameter_absent";
+NSString *version_rejected = @"version_rejected";
+NSString *consumer_key_unknown = @"consumer_key_unknown";
+NSString *token_rejected = @"token_rejected";
+NSString *signature_invalid = @"signature_invalid";
+NSString *nonce_used = @"nonce_used";
+NSString *timestamp_refused = @"timestamp_refused";
+NSString *token_expired = @"token_expired";
+NSString *token_not_renewable = @"token_not_renewable";
 
 @implementation OAProblem
 
 @synthesize problem;
 
-- (id)initWithPointer:(const NSString *) aPointer
+- (id)initWithPointer:(NSString *) aPointer
 {
-	[super init];
-	problem = aPointer;
+	if ((self = [super init])) {
+		problem = [aPointer copy];
+	}
 	return self;
 }
 
-- (id)initWithProblem:(const NSString *) aProblem
+- (id)initWithProblem:(NSString *) aProblem
 {
 	NSUInteger idx = [[OAProblem validProblems] indexOfObject:aProblem];
 	if (idx == NSNotFound) {
@@ -40,7 +41,7 @@ const NSString *token_not_renewable = @"token_not_renewable";
 	return [self initWithPointer: [[OAProblem validProblems] objectAtIndex:idx]];
 }
 	
-- (id)initWithResponseBody:(const NSString *) response
+- (id)initWithResponseBody:(NSString *) response
 {
 	NSArray *fields = [response componentsSeparatedByString:@"&"];
 	for (NSString *field in fields) {
@@ -53,12 +54,18 @@ const NSString *token_not_renewable = @"token_not_renewable";
 	return nil;
 }
 
-+ (OAProblem *)problemWithResponseBody:(const NSString *) response
+- (void)dealloc
+{
+	[problem release];
+	[super dealloc];
+}
+
++ (OAProblem *)problemWithResponseBody:(NSString *) response
 {
 	return [[[OAProblem alloc] initWithResponseBody:response] autorelease];
 }
 
-+ (const NSArray *)validProblems
++ (NSArray *)validProblems
 {
 	static NSArray *array;
 	if (!array) {
@@ -83,7 +90,7 @@ const NSString *token_not_renewable = @"token_not_renewable";
 	return [problem isEqualToString:(NSString *)aProblem->problem];
 }
 
-- (BOOL)isEqualToString:(const NSString *) aProblem
+- (BOOL)isEqualToString:(NSString *) aProblem
 {
 	return [problem isEqualToString:(NSString *)aProblem];
 }

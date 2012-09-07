@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,9 +12,6 @@
 		00302E64128DE1E30019F9AD /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 00302E3E128DE1E30019F9AD /* NSMutableURLRequest+Parameters.m */; };
 		00302E65128DE1E30019F9AD /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 00302E40128DE1E30019F9AD /* NSString+URLEncoding.m */; };
 		00302E66128DE1E30019F9AD /* NSURL+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 00302E42128DE1E30019F9AD /* NSURL+Base.m */; };
-		00302E67128DE1E30019F9AD /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 00302E44128DE1E30019F9AD /* Base64Transcoder.c */; };
-		00302E68128DE1E30019F9AD /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = 00302E46128DE1E30019F9AD /* hmac.c */; };
-		00302E69128DE1E30019F9AD /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = 00302E48128DE1E30019F9AD /* sha1.c */; };
 		00302E6A128DE1E30019F9AD /* OACall.m in Sources */ = {isa = PBXBuildFile; fileRef = 00302E4B128DE1E30019F9AD /* OACall.m */; };
 		00302E6B128DE1E30019F9AD /* OAConsumer.m in Sources */ = {isa = PBXBuildFile; fileRef = 00302E4D128DE1E30019F9AD /* OAConsumer.m */; };
 		00302E6C128DE1E30019F9AD /* OADataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 00302E4F128DE1E30019F9AD /* OADataFetcher.m */; };
@@ -32,12 +29,6 @@
 		00302E7A128DE1E30019F9AD /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 00302E40128DE1E30019F9AD /* NSString+URLEncoding.m */; };
 		00302E7B128DE1E30019F9AD /* NSURL+Base.h in Headers */ = {isa = PBXBuildFile; fileRef = 00302E41128DE1E30019F9AD /* NSURL+Base.h */; };
 		00302E7C128DE1E30019F9AD /* NSURL+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 00302E42128DE1E30019F9AD /* NSURL+Base.m */; };
-		00302E7D128DE1E30019F9AD /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 00302E44128DE1E30019F9AD /* Base64Transcoder.c */; };
-		00302E7E128DE1E30019F9AD /* Base64Transcoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 00302E45128DE1E30019F9AD /* Base64Transcoder.h */; };
-		00302E7F128DE1E30019F9AD /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = 00302E46128DE1E30019F9AD /* hmac.c */; };
-		00302E80128DE1E30019F9AD /* hmac.h in Headers */ = {isa = PBXBuildFile; fileRef = 00302E47128DE1E30019F9AD /* hmac.h */; };
-		00302E81128DE1E30019F9AD /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = 00302E48128DE1E30019F9AD /* sha1.c */; };
-		00302E82128DE1E30019F9AD /* sha1.h in Headers */ = {isa = PBXBuildFile; fileRef = 00302E49128DE1E30019F9AD /* sha1.h */; };
 		00302E83128DE1E30019F9AD /* OACall.h in Headers */ = {isa = PBXBuildFile; fileRef = 00302E4A128DE1E30019F9AD /* OACall.h */; };
 		00302E84128DE1E30019F9AD /* OACall.m in Sources */ = {isa = PBXBuildFile; fileRef = 00302E4B128DE1E30019F9AD /* OACall.m */; };
 		00302E85128DE1E30019F9AD /* OAConsumer.h in Headers */ = {isa = PBXBuildFile; fileRef = 00302E4C128DE1E30019F9AD /* OAConsumer.h */; };
@@ -68,6 +59,12 @@
 		00803DB1128DE64B0033DA60 /* GHUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00302D0E128DBF6B0019F9AD /* GHUnit.framework */; };
 		00803F2A128DF3520033DA60 /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00803F29128DF3520033DA60 /* YAJL.framework */; };
 		00803F2B128DF3520033DA60 /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00803F29128DF3520033DA60 /* YAJL.framework */; };
+		26A4349015FA4A36003ED32F /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 26A4348A15FA4A36003ED32F /* Base64Transcoder.c */; };
+		26A4349115FA4A36003ED32F /* Base64Transcoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 26A4348B15FA4A36003ED32F /* Base64Transcoder.h */; };
+		26A4349215FA4A36003ED32F /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = 26A4348C15FA4A36003ED32F /* hmac.c */; };
+		26A4349315FA4A36003ED32F /* hmac.h in Headers */ = {isa = PBXBuildFile; fileRef = 26A4348D15FA4A36003ED32F /* hmac.h */; };
+		26A4349415FA4A36003ED32F /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = 26A4348E15FA4A36003ED32F /* sha1.c */; };
+		26A4349515FA4A36003ED32F /* sha1.h in Headers */ = {isa = PBXBuildFile; fileRef = 26A4348F15FA4A36003ED32F /* sha1.h */; };
 		AA747D9F0F9514B9006C5449 /* YelpAPI_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* YelpAPI_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -94,12 +91,6 @@
 		00302E40128DE1E30019F9AD /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
 		00302E41128DE1E30019F9AD /* NSURL+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Base.h"; sourceTree = "<group>"; };
 		00302E42128DE1E30019F9AD /* NSURL+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Base.m"; sourceTree = "<group>"; };
-		00302E44128DE1E30019F9AD /* Base64Transcoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Base64Transcoder.c; sourceTree = "<group>"; };
-		00302E45128DE1E30019F9AD /* Base64Transcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Transcoder.h; sourceTree = "<group>"; };
-		00302E46128DE1E30019F9AD /* hmac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hmac.c; sourceTree = "<group>"; };
-		00302E47128DE1E30019F9AD /* hmac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hmac.h; sourceTree = "<group>"; };
-		00302E48128DE1E30019F9AD /* sha1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sha1.c; sourceTree = "<group>"; };
-		00302E49128DE1E30019F9AD /* sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha1.h; sourceTree = "<group>"; };
 		00302E4A128DE1E30019F9AD /* OACall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OACall.h; sourceTree = "<group>"; };
 		00302E4B128DE1E30019F9AD /* OACall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OACall.m; sourceTree = "<group>"; };
 		00302E4C128DE1E30019F9AD /* OAConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAConsumer.h; sourceTree = "<group>"; };
@@ -128,6 +119,12 @@
 		00302EBB128DE2D60019F9AD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		00302F86128DE5260019F9AD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		00803F29128DF3520033DA60 /* YAJL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YAJL.framework; path = Frameworks/YAJL.framework; sourceTree = "<group>"; };
+		26A4348A15FA4A36003ED32F /* Base64Transcoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Base64Transcoder.c; path = Libraries/OAuthConsumer/Crypto/Base64Transcoder.c; sourceTree = SOURCE_ROOT; };
+		26A4348B15FA4A36003ED32F /* Base64Transcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Base64Transcoder.h; path = Libraries/OAuthConsumer/Crypto/Base64Transcoder.h; sourceTree = SOURCE_ROOT; };
+		26A4348C15FA4A36003ED32F /* hmac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = hmac.c; path = Libraries/OAuthConsumer/Crypto/hmac.c; sourceTree = SOURCE_ROOT; };
+		26A4348D15FA4A36003ED32F /* hmac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hmac.h; path = Libraries/OAuthConsumer/Crypto/hmac.h; sourceTree = SOURCE_ROOT; };
+		26A4348E15FA4A36003ED32F /* sha1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = sha1.c; path = Libraries/OAuthConsumer/Crypto/sha1.c; sourceTree = SOURCE_ROOT; };
+		26A4348F15FA4A36003ED32F /* sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sha1.h; path = Libraries/OAuthConsumer/Crypto/sha1.h; sourceTree = SOURCE_ROOT; };
 		AA747D9E0F9514B9006C5449 /* YelpAPI_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YelpAPI_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libYelpAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libYelpAPI.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -224,12 +221,12 @@
 		00302E43128DE1E30019F9AD /* Crytpo */ = {
 			isa = PBXGroup;
 			children = (
-				00302E44128DE1E30019F9AD /* Base64Transcoder.c */,
-				00302E45128DE1E30019F9AD /* Base64Transcoder.h */,
-				00302E46128DE1E30019F9AD /* hmac.c */,
-				00302E47128DE1E30019F9AD /* hmac.h */,
-				00302E48128DE1E30019F9AD /* sha1.c */,
-				00302E49128DE1E30019F9AD /* sha1.h */,
+				26A4348A15FA4A36003ED32F /* Base64Transcoder.c */,
+				26A4348B15FA4A36003ED32F /* Base64Transcoder.h */,
+				26A4348C15FA4A36003ED32F /* hmac.c */,
+				26A4348D15FA4A36003ED32F /* hmac.h */,
+				26A4348E15FA4A36003ED32F /* sha1.c */,
+				26A4348F15FA4A36003ED32F /* sha1.h */,
 			);
 			path = Crytpo;
 			sourceTree = "<group>";
@@ -296,9 +293,6 @@
 				00302E77128DE1E30019F9AD /* NSMutableURLRequest+Parameters.h in Headers */,
 				00302E79128DE1E30019F9AD /* NSString+URLEncoding.h in Headers */,
 				00302E7B128DE1E30019F9AD /* NSURL+Base.h in Headers */,
-				00302E7E128DE1E30019F9AD /* Base64Transcoder.h in Headers */,
-				00302E80128DE1E30019F9AD /* hmac.h in Headers */,
-				00302E82128DE1E30019F9AD /* sha1.h in Headers */,
 				00302E83128DE1E30019F9AD /* OACall.h in Headers */,
 				00302E85128DE1E30019F9AD /* OAConsumer.h in Headers */,
 				00302E87128DE1E30019F9AD /* OADataFetcher.h in Headers */,
@@ -312,6 +306,9 @@
 				00302E96128DE1E30019F9AD /* OAToken.h in Headers */,
 				00302E98128DE1E30019F9AD /* OATokenManager.h in Headers */,
 				00302E9A128DE1E30019F9AD /* OAuthConsumer.h in Headers */,
+				26A4349115FA4A36003ED32F /* Base64Transcoder.h in Headers */,
+				26A4349315FA4A36003ED32F /* hmac.h in Headers */,
+				26A4349515FA4A36003ED32F /* sha1.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,8 +355,11 @@
 /* Begin PBXProject section */
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+			};
 			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "YelpAPI" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -399,9 +399,6 @@
 				00302E64128DE1E30019F9AD /* NSMutableURLRequest+Parameters.m in Sources */,
 				00302E65128DE1E30019F9AD /* NSString+URLEncoding.m in Sources */,
 				00302E66128DE1E30019F9AD /* NSURL+Base.m in Sources */,
-				00302E67128DE1E30019F9AD /* Base64Transcoder.c in Sources */,
-				00302E68128DE1E30019F9AD /* hmac.c in Sources */,
-				00302E69128DE1E30019F9AD /* sha1.c in Sources */,
 				00302E6A128DE1E30019F9AD /* OACall.m in Sources */,
 				00302E6B128DE1E30019F9AD /* OAConsumer.m in Sources */,
 				00302E6C128DE1E30019F9AD /* OADataFetcher.m in Sources */,
@@ -423,9 +420,6 @@
 				00302E78128DE1E30019F9AD /* NSMutableURLRequest+Parameters.m in Sources */,
 				00302E7A128DE1E30019F9AD /* NSString+URLEncoding.m in Sources */,
 				00302E7C128DE1E30019F9AD /* NSURL+Base.m in Sources */,
-				00302E7D128DE1E30019F9AD /* Base64Transcoder.c in Sources */,
-				00302E7F128DE1E30019F9AD /* hmac.c in Sources */,
-				00302E81128DE1E30019F9AD /* sha1.c in Sources */,
 				00302E84128DE1E30019F9AD /* OACall.m in Sources */,
 				00302E86128DE1E30019F9AD /* OAConsumer.m in Sources */,
 				00302E88128DE1E30019F9AD /* OADataFetcher.m in Sources */,
@@ -437,6 +431,9 @@
 				00302E94128DE1E30019F9AD /* OAServiceTicket.m in Sources */,
 				00302E97128DE1E30019F9AD /* OAToken.m in Sources */,
 				00302E99128DE1E30019F9AD /* OATokenManager.m in Sources */,
+				26A4349015FA4A36003ED32F /* Base64Transcoder.c in Sources */,
+				26A4349215FA4A36003ED32F /* hmac.c in Sources */,
+				26A4349415FA4A36003ED32F /* sha1.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,9 +468,8 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = Tests;
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -488,7 +484,6 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Frameworks\"",
 				);
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Tests_Prefix.pch;
 				INFOPLIST_FILE = "Tests-Info.plist";
@@ -497,9 +492,8 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = Tests;
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -516,13 +510,13 @@
 					"\"$(SRCROOT)/Frameworks\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = YelpAPI_Prefix.pch;
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = YelpAPI;
+				RUN_CLANG_STATIC_ANALYZER = YES;
 			};
 			name = Debug;
 		};
@@ -541,6 +535,7 @@
 				GCC_PREFIX_HEADER = YelpAPI_Prefix.pch;
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = YelpAPI;
+				RUN_CLANG_STATIC_ANALYZER = YES;
 			};
 			name = Release;
 		};
@@ -553,8 +548,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				PREBINDING = NO;
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -566,8 +560,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				PREBINDING = NO;
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};

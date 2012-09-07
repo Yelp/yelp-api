@@ -104,7 +104,7 @@ static NSString *Boundary = @"-----------------------------------0xCoCoaouTHeBou
 	[bodyData appendData:[filePrefix dataUsingEncoding:NSUTF8StringEncoding]];
 	[bodyData appendData:data];
 	
-	[bodyData appendData:[[[@"--" stringByAppendingString:Boundary] stringByAppendingString:@"--"] dataUsingEncoding:NSUTF8StringEncoding]];
+	[bodyData appendData:[[[@"\r\n--" stringByAppendingString:Boundary] stringByAppendingString:@"--"] dataUsingEncoding:NSUTF8StringEncoding]];
 	[self setValue:[NSString stringWithFormat:@"%d", [bodyData length]] forHTTPHeaderField:@"Content-Length"];
 	[self setHTTPBody:bodyData];
 	[bodyData release];

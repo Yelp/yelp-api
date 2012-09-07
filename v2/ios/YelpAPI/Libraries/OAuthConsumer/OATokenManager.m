@@ -51,20 +51,21 @@
 				 realm:(const NSString *)aRealm callback:(const NSString *)aCallback
 			  delegate:(NSObject <OATokenManagerDelegate> *)aDelegate {
 
-	[super init];
-	consumer = [aConsumer retain];
-	acToken = nil;
-	reqToken = nil;
-	initialToken = [aToken retain];
-	authorizedTokenKey = nil;
-	oauthBase = [base copy];
-	realm = [aRealm copy];
-	callback = [aCallback copy];
-	delegate = aDelegate;
-	calls = [[NSMutableArray alloc] init];
-	selectors = [[NSMutableArray alloc] init];
-	delegates = [[NSMutableDictionary alloc] init];
-	isDispatching = NO;
+	if ((self = [super init])) {
+		consumer = [aConsumer retain];
+		acToken = nil;
+		reqToken = nil;
+		initialToken = [aToken retain];
+		authorizedTokenKey = nil;
+		oauthBase = [base copy];
+		realm = [aRealm copy];
+		callback = [aCallback copy];
+		delegate = aDelegate;
+		calls = [[NSMutableArray alloc] init];
+		selectors = [[NSMutableArray alloc] init];
+		delegates = [[NSMutableDictionary alloc] init];
+		isDispatching = NO;
+	}
 
 	return self;
 }
@@ -86,7 +87,7 @@
 
 // The application got a new authorized
 // request token and is notifying us
-- (void)authorizedToken:(const NSString *)aKey
+- (void)authorizedToken:(NSString *)aKey
 {
 	if (reqToken && [aKey isEqualToString:reqToken.key]) {
 		[self exchangeToken];
@@ -281,7 +282,7 @@
 
 - (void)accessTokenReceived:(OACall *)call body:(NSString *)body
 {
-	OAToken *token = [[OAToken alloc] initWithHTTPResponseBody:body];
+	OAToken *token = [[[OAToken alloc] initWithHTTPResponseBody:body] autorelease];
 	[self setAccessToken:token];
 }
 
@@ -360,10 +361,10 @@
 - (void)fetchData:(NSString *)aURL method:(NSString *)aMethod parameters:(NSArray *)theParameters
 			files:(NSDictionary *)theFiles finished:(SEL)didFinish delegate:(NSObject*)aDelegate {
 	
-	OACall *call = [[OACall alloc] initWithURL:[NSURL URLWithString:aURL]
+	OACall *call = [[[OACall alloc] initWithURL:[NSURL URLWithString:aURL]
 										method:aMethod
 									parameters:theParameters
-										 files:theFiles];
+										 files:theFiles] autorelease];
 	NSLog(@"Received request for: %@", aURL);
 	[self enqueue:call selector:didFinish];
 	if (aDelegate) {

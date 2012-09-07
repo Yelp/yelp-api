@@ -39,7 +39,7 @@
 
 @implementation OAToken
 
-@synthesize key, secret, session, duration, attributes, forRenewal;
+@synthesize key, secret, session, duration, verifier, attributes, forRenewal;
 
 #pragma mark init
 
@@ -55,17 +55,30 @@
 - (id)initWithKey:(NSString *)aKey secret:(NSString *)aSecret session:(NSString *)aSession
 		 duration:(NSNumber *)aDuration attributes:(NSDictionary *)theAttributes created:(NSDate *)creation
 		renewable:(BOOL)renew {
-	[super init];
-	self.key = aKey;
-	self.secret = aSecret;
-	self.session = aSession;
-	self.duration = aDuration;
-	self.attributes = theAttributes;
-	created = [creation retain];
-	renewable = renew;
-	forRenewal = NO;
+	if ((self = [super init])) {
+		self.key = aKey;
+		self.secret = aSecret;
+		self.session = aSession;
+		self.duration = aDuration;
+		self.attributes = theAttributes;
+		created = [creation retain];
+		renewable = renew;
+		forRenewal = NO;
+	}
 
 	return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+	OAToken *t = [self initWithKey:[aDecoder decodeObjectForKey:@"key"]
+							secret:[aDecoder decodeObjectForKey:@"secret"]
+						   session:[aDecoder decodeObjectForKey:@"session"]
+						  duration:[aDecoder decodeObjectForKey:@"duration"]
+						attributes:[aDecoder decodeObjectForKey:@"attributes"]
+						   created:[aDecoder decodeObjectForKey:@"created"]
+						 renewable:[aDecoder decodeBoolForKey:@"renewable"]];
+	[t setVerifier:[aDecoder decodeObjectForKey:@"verifier"]];
+	return t;
 }
 
 - (id)initWithHTTPResponseBody:(const NSString *)body {
@@ -104,19 +117,20 @@
 }
 
 - (id)initWithUserDefaultsUsingServiceProviderName:(const NSString *)provider prefix:(const NSString *)prefix {
-	[super init];
-	self.key = [OAToken loadSetting:@"key" provider:provider prefix:prefix];
-	self.secret = [OAToken loadSetting:@"secret" provider:provider prefix:prefix];
-	self.session = [OAToken loadSetting:@"session" provider:provider prefix:prefix];
-	self.duration = [OAToken loadSetting:@"duration" provider:provider prefix:prefix];
-	self.attributes = [OAToken loadSetting:@"attributes" provider:provider prefix:prefix];
-	created = [OAToken loadSetting:@"created" provider:provider prefix:prefix];
-	renewable = [[OAToken loadSetting:@"renewable" provider:provider prefix:prefix] boolValue];
+	if ((self = [super init])) {
+      self.key = [OAToken loadSetting:@"key" provider:provider prefix:prefix];
+      self.secret = [OAToken loadSetting:@"secret" provider:provider prefix:prefix];
+      self.session = [OAToken loadSetting:@"session" provider:provider prefix:prefix];
+      self.duration = [OAToken loadSetting:@"duration" provider:provider prefix:prefix];
+      self.attributes = [OAToken loadSetting:@"attributes" provider:provider prefix:prefix];
+      created = [OAToken loadSetting:@"created" provider:provider prefix:prefix];
+      renewable = [[OAToken loadSetting:@"renewable" provider:provider prefix:prefix] boolValue];
 
-	if (![self isValid]) {
-		[self autorelease];
-		return nil;
-	}
+      if (![self isValid]) {
+        [self autorelease];
+        return nil;
+      }
+  }
 	
 	return self;
 }
@@ -126,7 +140,9 @@
 - (void)dealloc {
     self.key = nil;
     self.secret = nil;
+	self.session = nil;
     self.duration = nil;
+    self.verifier = nil;
     self.attributes = nil;
 	[super dealloc];
 }
@@ -148,6 +164,16 @@
 	
 	[[NSUserDefaults standardUserDefaults] synchronize];
 	return(0);
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+	[aCoder encodeObject:[self key] forKey:@"key"];
+	[aCoder encodeObject:[self secret] forKey:@"secret"];
+	[aCoder encodeObject:[self session] forKey:@"session"];
+	[aCoder encodeObject:[self duration] forKey:@"duration"];
+	[aCoder encodeObject:[self attributes] forKey:@"attributes"];
+	[aCoder encodeBool:renewable forKey:@"renewable"];
+	[aCoder encodeObject:[self verifier] forKey:@"verifier"];
 }
 
 #pragma mark duration
@@ -230,6 +256,9 @@
 		if ([attributes count]) {
 			[params setObject:[self attributeString] forKey:@"oauth_token_attributes"];
 		}
+	}
+	if (self.verifier) {
+		[params setObject:self.verifier forKey:@"oauth_verifier"];
 	}
 	return params;
 }

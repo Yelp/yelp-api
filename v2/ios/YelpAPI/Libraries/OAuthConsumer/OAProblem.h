@@ -22,22 +22,22 @@ enum {
 };
 
 @interface OAProblem : NSObject {
-	const NSString *problem;
+	NSString *problem;
 }
 
-@property (readonly) const NSString *problem;
+@property (readonly) NSString *problem;
 
-- (id)initWithProblem:(const NSString *)aProblem;
-- (id)initWithResponseBody:(const NSString *)response;
+- (id)initWithProblem:(NSString *)aProblem;
+- (id)initWithResponseBody:(NSString *)response;
 
 - (BOOL)isEqualToProblem:(OAProblem *)aProblem;
-- (BOOL)isEqualToString:(const NSString *)aProblem;
+- (BOOL)isEqualToString:(NSString *)aProblem;
 - (BOOL)isEqualTo:(id)aProblem;
 - (int)code;
 
-+ (OAProblem *)problemWithResponseBody:(const NSString *)response;
++ (OAProblem *)problemWithResponseBody:(NSString *)response;
 
-+ (const NSArray *)validProblems;
++ (NSArray *)validProblems;
 
 + (OAProblem *)SignatureMethodRejected;
 + (OAProblem *)ParameterAbsent;

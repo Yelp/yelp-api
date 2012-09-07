@@ -56,8 +56,7 @@
 	
 }
 
--(NSString *)removeQuotes
-{
+-(NSString *)removeQuotes {
 	NSUInteger length = [self length];
 	NSString *ret = self;
 	if ([self characterAtIndex:0] == '"') {
