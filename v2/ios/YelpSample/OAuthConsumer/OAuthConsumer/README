@@ -1,0 +1,15 @@
+This is an iPhone ready version of:
+http://oauth.googlecode.com/svn/code/obj-c/OAuthConsumer/
+
+"iPhone ready" simply means you just need to add the files to Xcode, and import "OAuthConsumer.h".
+
+If you're rolling with the iPhone:
+
+1) Be sure to add Security.framework.
+2) Include libxml2.dylib in your frameworks.  You also need to add a
+build property to the project -- "header search paths" needs to 
+include "$SDKROOT/usr/include/libxml2" with "Recursive" checked.
+
+Be sure to include sys/types.h.
+
+Questions?  E-mail me.  jonathan at my initials (jdg) dot net.
