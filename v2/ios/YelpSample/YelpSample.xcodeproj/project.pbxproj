@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		263DB03E15FE313400E4EB90 /* YelpRating.png in Resources */ = {isa = PBXBuildFile; fileRef = 263DB03C15FE313400E4EB90 /* YelpRating.png */; };
+		263DB03F15FE313400E4EB90 /* YelpRating@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 263DB03D15FE313400E4EB90 /* YelpRating@2x.png */; };
+		263DB04615FE439A00E4EB90 /* NSDate+InternetDateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 263DB04515FE439A00E4EB90 /* NSDate+InternetDateTime.m */; };
+		263DB05315FE43AF00E4EB90 /* ONDownloadItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 263DB04915FE43AF00E4EB90 /* ONDownloadItem.m */; };
+		263DB05415FE43AF00E4EB90 /* ONDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 263DB04B15FE43AF00E4EB90 /* ONDownloadOperation.m */; };
+		263DB05515FE43AF00E4EB90 /* ONHeadRequestOpertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 263DB04D15FE43AF00E4EB90 /* ONHeadRequestOpertion.m */; };
+		263DB05615FE43AF00E4EB90 /* ONNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 263DB05015FE43AF00E4EB90 /* ONNetworkManager.m */; };
+		263DB05715FE43AF00E4EB90 /* ONNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 263DB05215FE43AF00E4EB90 /* ONNetworkOperation.m */; };
 		26A434A615FA5978003ED32F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A434A515FA5978003ED32F /* UIKit.framework */; };
 		26A434A815FA5978003ED32F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A434A715FA5978003ED32F /* Foundation.framework */; };
 		26A434AA15FA5978003ED32F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A434A915FA5978003ED32F /* CoreGraphics.framework */; };
@@ -70,6 +78,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		263DB03C15FE313400E4EB90 /* YelpRating.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = YelpRating.png; path = Media/YelpRating.png; sourceTree = SOURCE_ROOT; };
+		263DB03D15FE313400E4EB90 /* YelpRating@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "YelpRating@2x.png"; path = "Media/YelpRating@2x.png"; sourceTree = SOURCE_ROOT; };
+		263DB04415FE439A00E4EB90 /* NSDate+InternetDateTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+InternetDateTime.h"; path = "Categories/NSDate+InternetDateTime.h"; sourceTree = "<group>"; };
+		263DB04515FE439A00E4EB90 /* NSDate+InternetDateTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+InternetDateTime.m"; path = "Categories/NSDate+InternetDateTime.m"; sourceTree = "<group>"; };
+		263DB04815FE43AF00E4EB90 /* ONDownloadItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONDownloadItem.h; sourceTree = "<group>"; };
+		263DB04915FE43AF00E4EB90 /* ONDownloadItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONDownloadItem.m; sourceTree = "<group>"; };
+		263DB04A15FE43AF00E4EB90 /* ONDownloadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONDownloadOperation.h; sourceTree = "<group>"; };
+		263DB04B15FE43AF00E4EB90 /* ONDownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONDownloadOperation.m; sourceTree = "<group>"; };
+		263DB04C15FE43AF00E4EB90 /* ONHeadRequestOpertion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONHeadRequestOpertion.h; sourceTree = "<group>"; };
+		263DB04D15FE43AF00E4EB90 /* ONHeadRequestOpertion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONHeadRequestOpertion.m; sourceTree = "<group>"; };
+		263DB04E15FE43AF00E4EB90 /* ONNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONNetworking.h; sourceTree = "<group>"; };
+		263DB04F15FE43AF00E4EB90 /* ONNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONNetworkManager.h; sourceTree = "<group>"; };
+		263DB05015FE43AF00E4EB90 /* ONNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONNetworkManager.m; sourceTree = "<group>"; };
+		263DB05115FE43AF00E4EB90 /* ONNetworkOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONNetworkOperation.h; sourceTree = "<group>"; };
+		263DB05215FE43AF00E4EB90 /* ONNetworkOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONNetworkOperation.m; sourceTree = "<group>"; };
+		263DB05815FE45BE00E4EB90 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		26A434A115FA5978003ED32F /* YelpSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YelpSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A434A515FA5978003ED32F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		26A434A715FA5978003ED32F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -152,6 +176,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		263DB04715FE43AF00E4EB90 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				263DB04815FE43AF00E4EB90 /* ONDownloadItem.h */,
+				263DB04915FE43AF00E4EB90 /* ONDownloadItem.m */,
+				263DB04A15FE43AF00E4EB90 /* ONDownloadOperation.h */,
+				263DB04B15FE43AF00E4EB90 /* ONDownloadOperation.m */,
+				263DB04C15FE43AF00E4EB90 /* ONHeadRequestOpertion.h */,
+				263DB04D15FE43AF00E4EB90 /* ONHeadRequestOpertion.m */,
+				263DB04E15FE43AF00E4EB90 /* ONNetworking.h */,
+				263DB04F15FE43AF00E4EB90 /* ONNetworkManager.h */,
+				263DB05015FE43AF00E4EB90 /* ONNetworkManager.m */,
+				263DB05115FE43AF00E4EB90 /* ONNetworkOperation.h */,
+				263DB05215FE43AF00E4EB90 /* ONNetworkOperation.m */,
+			);
+			path = Networking;
+			sourceTree = SOURCE_ROOT;
+		};
 		26A4349615FA5978003ED32F = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +241,7 @@
 				26A4350D15FA74DB003ED32F /* View Controllers */,
 				26A4350E15FA74EB003ED32F /* Views */,
 				26BABAEC15FA7D2900097EE9 /* Models */,
+				263DB04715FE43AF00E4EB90 /* Networking */,
 				26A434F415FA5D28003ED32F /* Media */,
 			);
 			path = YelpSample;
@@ -211,6 +254,7 @@
 				26A434AE15FA5978003ED32F /* InfoPlist.strings */,
 				26A434B115FA5978003ED32F /* main.m */,
 				26A434B315FA5978003ED32F /* YelpSample-Prefix.pch */,
+				263DB05815FE45BE00E4EB90 /* Singleton.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -252,6 +296,8 @@
 				26A434F815FA5D36003ED32F /* Icon@2x.png */,
 				26BABAF915FAA59D00097EE9 /* BurstAnnotation.png */,
 				26BABAFA15FAA59D00097EE9 /* BurstAnnotation@2x.png */,
+				263DB03C15FE313400E4EB90 /* YelpRating.png */,
+				263DB03D15FE313400E4EB90 /* YelpRating@2x.png */,
 			);
 			name = Media;
 			sourceTree = "<group>";
@@ -303,6 +349,8 @@
 			children = (
 				26BABAF615FA9B3000097EE9 /* UIImage+BBlock.h */,
 				26BABAF715FA9B3000097EE9 /* UIImage+BBlock.m */,
+				263DB04415FE439A00E4EB90 /* NSDate+InternetDateTime.h */,
+				263DB04515FE439A00E4EB90 /* NSDate+InternetDateTime.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -413,6 +461,8 @@
 				26BABAFB15FAA59D00097EE9 /* BurstAnnotation.png in Resources */,
 				26BABAFC15FAA59D00097EE9 /* BurstAnnotation@2x.png in Resources */,
 				26BABB0115FAB13A00097EE9 /* YPLocationCell.xib in Resources */,
+				263DB03E15FE313400E4EB90 /* YelpRating.png in Resources */,
+				263DB03F15FE313400E4EB90 /* YelpRating@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +510,11 @@
 				26BABAF815FA9B3000097EE9 /* UIImage+BBlock.m in Sources */,
 				26BABAFF15FAB12400097EE9 /* YPLocationCell.m in Sources */,
 				26BABB0415FAB3CA00097EE9 /* YPGradientBackgroundView.m in Sources */,
+				263DB05315FE43AF00E4EB90 /* ONDownloadItem.m in Sources */,
+				263DB05415FE43AF00E4EB90 /* ONDownloadOperation.m in Sources */,
+				263DB05515FE43AF00E4EB90 /* ONHeadRequestOpertion.m in Sources */,
+				263DB05615FE43AF00E4EB90 /* ONNetworkManager.m in Sources */,
+				263DB05715FE43AF00E4EB90 /* ONNetworkOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +523,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26A434D115FA5978003ED32F /* YelpSampleTests.m in Sources */,
+				263DB04615FE439A00E4EB90 /* NSDate+InternetDateTime.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

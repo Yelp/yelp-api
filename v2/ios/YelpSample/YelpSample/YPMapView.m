@@ -52,6 +52,9 @@
 - (void)setMapAnnotations:(NSArray *)locations {
     [self.mapView removeAnnotations:self.mapView.annotations];
     [self.mapView addAnnotations:locations];
+    
+    [self repositionMapOnAnnotations:self.mapView.annotations animated:TRUE];
+    self.mapView.showsUserLocation = TRUE;
 }
 
 - (void)setSelectedLocation:(YPLocation *)location {
@@ -66,7 +69,7 @@
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
     MKAnnotationView *annotationView = nil;
     
-    YPLocation *location = [self locationForAnnotation:annotation];
+    YPLocation *location = [YPLocation locationForAnnotation:annotation];
     
     if (location != nil) {
         annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:kAnnotationViewReuseIdentifier];
@@ -86,13 +89,9 @@
 }
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
-    YPLocation *location = [self locationForAnnotationView:view];
+    YPLocation *location = [YPLocation locationForAnnotationView:view];
     if (location != nil) {
         self.currentSelectedLocation = location;
-        
-        if ([self.delegate respondsToSelector:@selector(mapView:didSelectLocation:)]) {
-            [self.delegate mapView:self didSelectLocation:location];
-        }
     }
 }
 
@@ -101,11 +100,13 @@
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
-    YPLocation *location = [self locationForAnnotationView:view];
+    YPLocation *location = [YPLocation locationForAnnotationView:view];
     
-    DebugLog(@"location: %@", location);
+    assert(self.delegate != nil);
     
-    // TODO finish (push detail view)
+    if ([self.delegate respondsToSelector:@selector(mapView:didSelectLocation:)]) {
+        [self.delegate mapView:self didSelectLocation:location];
+    }
 }
 
 //- (void)mapViewWillStartLocatingUser:(MKMapView *)mapView NS_AVAILABLE(NA, 4_0);
@@ -113,21 +114,30 @@
 //- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation NS_AVAILABLE(NA, 4_0);
 //- (void)mapView:(MKMapView *)mapView didFailToLocateUserWithError:(NSError *)error NS_AVAILABLE(NA, 4_0);
 
-#pragma mark - Private
+#pragma mark - Private Methods
 #pragma mark -
 
-- (YPLocation *)locationForAnnotation:(id<MKAnnotation>)annotation {
-    YPLocation *location = nil;
+- (void)repositionMapOnAnnotations:(NSArray *)annotations animated:(BOOL)animated {
+    MKMapRect mapRect = MKMapRectNull;
     
-    if ([annotation isKindOfClass:[YPLocation class]]) {
-        location = (YPLocation *)annotation;
+    for (id <MKAnnotation> annotation in annotations) {
+        MKMapPoint annotationPoint = MKMapPointForCoordinate(annotation.coordinate);
+        MKMapRect pointRect = MKMapRectMake(annotationPoint.x, annotationPoint.y, 0.15, 0.15);
+        if (MKMapRectIsNull(mapRect)) {
+            mapRect = pointRect;
+        } else {
+            mapRect = MKMapRectUnion(mapRect, pointRect);
+        }
     }
     
-    return location;
-}
-
-- (YPLocation *)locationForAnnotationView:(MKAnnotationView *)annotationView {
-    return [self locationForAnnotation:annotationView.annotation];
+    if (!MKMapRectIsNull(mapRect)) {
+        [self.mapView setVisibleMapRect:mapRect animated:animated];
+    }
+    
+    // HACK a bug somehow sets isUserInteractionEnabled to false when a map view animates
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.35 * NSEC_PER_SEC), dispatch_get_current_queue(), ^{
+        self.mapView.userInteractionEnabled = TRUE;
+    });
 }
 
 @end

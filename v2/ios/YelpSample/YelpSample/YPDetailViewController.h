@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import "YPLocation.h"
+
 @interface YPDetailViewController : UIViewController
+
+@property (strong, nonatomic) YPLocation *location;
 
 @end

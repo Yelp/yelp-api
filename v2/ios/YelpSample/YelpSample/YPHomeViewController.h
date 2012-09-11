@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface YPHomeViewController : UIViewController
+
+@property (strong, nonatomic) CLLocation *latestCurrentLocation;
 
 @end

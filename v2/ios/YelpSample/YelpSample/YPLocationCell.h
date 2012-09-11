@@ -10,6 +10,9 @@
 
 #import "YPLocation.h"
 
+#define kLocationUpdatedNotification        @"LocationUpdatedNotification"
+#define kLocationUpdatedKey                 @"LocationUpdatedKey"
+
 @interface YPLocationCell : UITableViewCell
 
 - (void)customizeForLocation:(YPLocation *)location;

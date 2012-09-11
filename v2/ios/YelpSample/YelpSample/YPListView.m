@@ -45,7 +45,7 @@
     
     // Register this nib file with cell identifier.
     UINib *cellNib = [UINib nibWithNibName:kCellName bundle:nil];
-    [self.tableView registerNib:cellNib forCellReuseIdentifier:kCellName];    
+    [self.tableView registerNib:cellNib forCellReuseIdentifier:kCellName];
 }
 
 #pragma mark - Public Methods
@@ -53,6 +53,7 @@
 
 - (void)setListItems:(NSArray *)locations {
     self.locations = locations;
+    
     [self.tableView reloadData];
 }
 
@@ -83,6 +84,10 @@
     return (UITableViewCell*)cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 44.0;
+}
+
 #pragma mark - UITableViewDelegate
 #pragma mark -
 
@@ -92,6 +97,8 @@
     assert(indexPath.row < self.locations.count);
     YPLocation *location = [self.locations objectAtIndex:indexPath.row];
     self.currentSelectedLocation = location;
+    
+    assert(self.delegate != nil);
     
     if ([self.delegate respondsToSelector:@selector(listView:didSelectLocation:)]) {
         [self.delegate listView:self didSelectLocation:location];

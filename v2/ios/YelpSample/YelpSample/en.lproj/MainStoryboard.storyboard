@@ -33,11 +33,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="B7s-4Q-2CP" userLabel="Top View">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="38"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="HFI-v0-fqf">
-                                        <rect key="frame" x="20" y="4" width="280" height="30"/>
+                                        <rect key="frame" x="20" y="39" width="280" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <segments>
                                             <segment title="Map"/>
@@ -48,22 +48,46 @@
                                             <action selector="segmentedControlValueChanged:" destination="ocz-un-NOb" eventType="valueChanged" id="332-sc-FJo"/>
                                         </connections>
                                     </segmentedControl>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="San Francisco" minimumFontSize="17" clearButtonMode="whileEditing" id="phc-eE-c7L">
+                                        <rect key="frame" x="20" y="5" width="138" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="ocz-un-NOb" id="Rrb-Ke-D84"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pizza" minimumFontSize="17" clearButtonMode="whileEditing" id="h26-QE-CA2">
+                                        <rect key="frame" x="161" y="5" width="139" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="ocz-un-NOb" id="Cma-hK-wS0"/>
+                                        </connections>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" id="QdT-jc-dSN" userLabel="Container View">
-                                <rect key="frame" x="0.0" y="37" width="320" height="342"/>
+                                <rect key="frame" x="0.0" y="75" width="320" height="304"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="Nmy-if-UJ7" customClass="YPListView">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="342"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="304"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="ocz-un-NOb" id="1cb-ry-2PN"/>
+                                        </connections>
                                     </view>
                                     <view contentMode="scaleToFill" id="cjQ-xc-c2Q" customClass="YPMapView">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="342"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="304"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="ocz-un-NOb" id="cLe-7u-hRI"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
@@ -88,13 +112,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Yelp" id="0mA-fV-Oq2">
-                        <barButtonItem key="leftBarButtonItem" title="Location" id="Nsi-DU-Vtr"/>
-                        <barButtonItem key="rightBarButtonItem" title="Open Yelp" id="c1b-w2-gIO"/>
+                        <barButtonItem key="backBarButtonItem" title="Back" id="SSJ-qp-v01"/>
                     </navigationItem>
                     <connections>
                         <outlet property="containerView" destination="QdT-jc-dSN" id="DWb-iA-68e"/>
                         <outlet property="listView" destination="Nmy-if-UJ7" id="L76-Ws-54D"/>
+                        <outlet property="locationTextField" destination="phc-eE-c7L" id="146-8c-gWf"/>
                         <outlet property="mapView" destination="cjQ-xc-c2Q" id="S09-JB-2sF"/>
+                        <outlet property="queryTextField" destination="h26-QE-CA2" id="yck-sh-TJl"/>
                         <outlet property="segmentedControl" destination="HFI-v0-fqf" id="uDz-ln-Sbw"/>
                         <outlet property="topView" destination="B7s-4Q-2CP" id="D5w-0D-vlB"/>
                         <outlet property="yelpDevelopersButton" destination="DMU-SC-912" id="Elg-bX-zUM"/>
@@ -102,9 +127,9 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="224" y="-12"/>
+            <point key="canvasLocation" x="236" y="-12"/>
         </scene>
-        <!--Detail View Controller - Detail-->
+        <!--Detail View Controller - Yelp-->
         <scene sceneID="Uus-ls-FAF">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pjH-gx-95e" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -112,22 +137,134 @@
                     <view key="view" contentMode="scaleToFill" id="zoZ-3E-HUc">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="oQ2-Oh-AbK">
+                                <rect key="frame" x="77" y="10" width="192" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="99.9 mi" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="ffL-Qg-NOs">
+                                <rect key="frame" x="267" y="10" width="40" height="12"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="YelpRating.png" id="6wb-Nn-RcI" userLabel="Yelp Rating - Image  View">
+                                <rect key="frame" x="77" y="36" width="83" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="B63-WF-Z7O">
+                                <rect key="frame" x="19" y="359" width="280" height="37"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Open in Yelp">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="openInYelpButtonTapped:" destination="9K5-ax-wdl" eventType="touchUpInside" id="0IB-Da-IVQ"/>
+                                </connections>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" id="ddW-Cn-dk8">
+                                <rect key="frame" x="20" y="78" width="280" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="9K5-ax-wdl" id="K70-ie-wMl"/>
+                                </connections>
+                            </mapView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="lwn-Pd-STA">
+                                <rect key="frame" x="20" y="213" width="280" height="14"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Neighorhood" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="8DK-7t-cVf">
+                                <rect key="frame" x="20" y="232" width="280" height="14"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="QBe-qf-hEd">
+                                <rect key="frame" x="77" y="59" width="280" height="14"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="DJW-fF-nFs" userLabel="Image View - Business Photo">
+                                <rect key="frame" x="19" y="17" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Snippet Text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="gh1-zY-Vs4">
+                                <rect key="frame" x="20" y="251" width="279" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="99 reviews" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="Ka7-JG-iZ5">
+                                <rect key="frame" x="165" y="38" width="134" height="12"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Detail" id="Fdo-Jw-dJt">
-                        <barButtonItem key="rightBarButtonItem" title="Share" id="rGu-xJ-cMd"/>
+                    <navigationItem key="navigationItem" title="Yelp" id="Fdo-Jw-dJt">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="lse-VR-hRw"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addressLabel" destination="lwn-Pd-STA" id="vcd-kl-frG"/>
+                        <outlet property="businessPhotoImageView" destination="DJW-fF-nFs" id="0mz-fD-dR6"/>
+                        <outlet property="categoryLabel" destination="QBe-qf-hEd" id="108-Uw-fZq"/>
+                        <outlet property="distanceLabel" destination="ffL-Qg-NOs" id="Ju9-6X-2JS"/>
+                        <outlet property="mapView" destination="ddW-Cn-dk8" id="6h6-gR-blP"/>
+                        <outlet property="neighborhoodLabel" destination="8DK-7t-cVf" id="itl-5p-rnE"/>
+                        <outlet property="openInYelpButton" destination="B63-WF-Z7O" id="Yd0-rx-3wY"/>
+                        <outlet property="ratingImageView" destination="6wb-Nn-RcI" id="gbj-WX-4ZD"/>
+                        <outlet property="reviewCountLabel" destination="Ka7-JG-iZ5" id="4fX-Dx-oTq"/>
+                        <outlet property="snippetTextLabel" destination="gh1-zY-Vs4" id="FSM-hI-Zn6"/>
+                        <outlet property="titleLabel" destination="oQ2-Oh-AbK" id="s3g-FT-owL"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="687" y="-12"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="YelpRating.png" width="83" height="15"/>
+    </resources>
     <classes>
         <class className="YPBaseNibView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/YPBaseNibView.h"/>
         </class>
         <class className="YPDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/YPDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="checkInButtonTapped:"/>
+                <relationship kind="action" name="shareButtonTapped:"/>
+                <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="businessPhotoImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="categoryLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="checkInButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="distanceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="neighborhoodLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="ratingImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="reviewCountLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="snippetTextLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
         </class>
         <class className="YPHomeViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/YPHomeViewController.h"/>
@@ -136,7 +273,9 @@
                 <relationship kind="action" name="yelpDevelopersButtonTapped:"/>
                 <relationship kind="outlet" name="containerView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="listView" candidateClass="YPListView"/>
+                <relationship kind="outlet" name="locationTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="mapView" candidateClass="YPMapView"/>
+                <relationship kind="outlet" name="queryTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="segmentedControl" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="topView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="yelpDevelopersButton" candidateClass="UIButton"/>

@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 #import "OAuthConsumer.h"
 
-@interface YPAppDelegate : UIResponder <UIApplicationDelegate>
+@interface YPAppDelegate : UIResponder <UIApplicationDelegate, CLLocationManagerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) CLLocation *currentLocation;
 
 @end

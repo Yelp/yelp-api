@@ -8,16 +8,12 @@
 
 #import "YPYelpService.h"
 
-// Yelp API 1.0
-
-#define kYelpWSID               @"pc5Oq2YkcnyWIyF0gzSZUw"
-
 // Yelp API 2.0
 
-#define kYelpConsumerKey        @"7Dho3n2dDsiLcrqSuPo-ZA"
-#define kYelpConsumerSecret     @"9hZdLlyLJ0yiwDCnD0jTu9uvzww"
-#define kYelpToken              @"FK27DFAIaA3mpUcRAhXEaB_3JUMwVu4G"
-#define kYelpTokenSecret        @"ELvhkBOVkWCDQ8Gwhl_jyDoD6js"
+#define kYelpConsumerKey        @""
+#define kYelpConsumerSecret     @""
+#define kYelpToken              @""
+#define kYelpTokenSecret        @""
 
 #import "OAuthConsumer.h"
 #import "NSString+URLEncoding.h"
@@ -57,6 +53,14 @@ typedef void (^YPYelpServiceCompletionHandler)(void);
     assert(location != nil && ![@"" isEqualToString:location]);
     assert(completionBlock != nil);
     self.completionHandler = completionBlock;
+    
+    if ([@"" isEqualToString:kYelpConsumerKey] ||
+        [@"" isEqualToString:kYelpConsumerSecret] ||
+        [@"" isEqualToString:kYelpToken] ||
+        [@"" isEqualToString:kYelpTokenSecret]) {
+        DebugLog(@"Please set Yelp application keys.");
+        return;
+    }
     
     NSString *encodedQuery = [query encodedURLParameterString];
     NSString *encodedLocation = [location encodedURLParameterString];
