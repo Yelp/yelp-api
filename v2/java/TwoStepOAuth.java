@@ -1,10 +1,10 @@
-import org.scribe.model.Token;
 import org.scribe.builder.api.DefaultApi10a;
+import org.scribe.model.Token;
 
 /**
- * Service provider for "2-legged" OAuth10a for Yelp API (version 2).
+ * Generic service provider for two-step OAuth10a.
  */
-public class YelpApi2 extends DefaultApi10a {
+public class TwoStepOAuth extends DefaultApi10a {
 
   @Override
   public String getAccessTokenEndpoint() {
@@ -20,5 +20,4 @@ public class YelpApi2 extends DefaultApi10a {
   public String getRequestTokenEndpoint() {
     return null;
   }
-
 }
