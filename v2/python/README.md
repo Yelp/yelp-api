@@ -1,20 +1,22 @@
+# Yelp API v2 Python Code Sample
 
-# Examples
+## Overview
+This program demonstrates the capability of the Yelp API version 2.0
+by using the Search API to query for businesses by a search term and location,
+and the Business API to query additional information about the top result
+from the search query.
 
- - `search.py`: Command line interface to the Yelp Search API. `python search.py --help`
- - `business.py`: Command line interface to the Yelp Business API. `python business.py --help`
- - `sign_request.py`: Example for signing a search request using the oauth2 library.
+Please refer to [API documentation](http://www.yelp.com/developers/documentation)
+for more details.
 
-These scripts require the oauth2 library which you can install via:
 
-	sudo easy_install oauth2
+## Steps to run
 
-Search for `bars` in `sf`:
+To install the dependencies, run:
+`pip install -r requirements.txt`.
 
-	python search.py --consumer_key="CONSUMER_KEY" --consumer_secret="CONSUMER_SECRET" \
-	--token="TOKEN" --token_secret="TOKEN_SECRET" --location="sf" --term="bars"
+Run the code sample without specifying any arguments:
+`python sample.py`
 
-Lookup business information for `yelp-san-francisco` (Yelp):
-
-	python business.py --consumer_key="CONSUMER_KEY" --consumer_secret="CONSUMER_SECRET" \
-	--token="TOKEN" --token_secret="TOKEN_SECRET" --id="yelp-san-francisco"
+Run the code sample by specifying the optional arguments:
+`python sample.py --term="bars" --location="San Francisco, CA"`
