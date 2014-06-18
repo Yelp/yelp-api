@@ -85,7 +85,23 @@ abstract class OAuthSignatureMethod {
    */
   public function check_signature($request, $consumer, $token, $signature) {
     $built = $this->build_signature($request, $consumer, $token);
-    return $built == $signature;
+
+    // Check for zero length, although unlikely here
+    if (strlen($built) == 0 || strlen($signature) == 0) {
+      return false;
+    }
+
+    if (strlen($built) != strlen($signature)) {
+      return false;
+    }
+
+    // Avoid a timing leak with a (hopefully) time insensitive compare
+    $result = 0;
+    for ($i = 0; $i < strlen($signature); $i++) {
+      $result |= ord($built{$i}) ^ ord($signature{$i});
+    }
+
+    return $result == 0;
   }
 }
 
@@ -243,7 +259,7 @@ class OAuthRequest {
               ? 'http'
               : 'https';
     $http_url = ($http_url) ? $http_url : $scheme .
-                              '://' . $_SERVER['HTTP_HOST'] .
+                              '://' . $_SERVER['SERVER_NAME'] .
                               ':' .
                               $_SERVER['SERVER_PORT'] .
                               $_SERVER['REQUEST_URI'];
@@ -383,7 +399,7 @@ class OAuthRequest {
 
     $scheme = (isset($parts['scheme'])) ? $parts['scheme'] : 'http';
     $port = (isset($parts['port'])) ? $parts['port'] : (($scheme == 'https') ? '443' : '80');
-    $host = (isset($parts['host'])) ? $parts['host'] : '';
+    $host = (isset($parts['host'])) ? strtolower($parts['host']) : '';
     $path = (isset($parts['path'])) ? $parts['path'] : '';
 
     if (($scheme == 'https' && $port != '443')
