@@ -16,7 +16,7 @@
  *      http://oauth.googlecode.com/svn/code/php/
  * 
  * Sample usage of the program:
- * `php sample.py --term="bars" --location="San Francisco, CA"`
+ * `php sample.php --term="bars" --location="San Francisco, CA"`
  */
 
 // Enter the path that the oauth library is in relation to the php file
