@@ -4,7 +4,7 @@ This is a sample Rails application using the Ruby gem. To check it out in action
 
 ## Usage
 
-The key take away here is that you'll want to place an initializer inside of ``config/initializers`` that set's up the keys for the gem.
+The key take away here is that you'll want to place an initializer inside of ``config/initializers`` that sets up the keys for the gem.
 
 ```
 # inside of config/initializers/yelp.rb
