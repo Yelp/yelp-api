@@ -1,0 +1,25 @@
+//
+// Prefix header for all source files of the 'YelpSample' target in the 'YelpSample' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+// Disables log messages when debugging is turned off
+#ifndef NDEBUG
+
+#define DebugLog(message, ...) NSLog(@"%s: " message, __PRETTY_FUNCTION__, ##__VA_ARGS__)
+
+#else
+
+#define DebugLog(message, ...)
+
+#endif

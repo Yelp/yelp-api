@@ -98,6 +98,7 @@ static u_int8_t workspace[64];
     state[4] += e;
     /* Wipe variables */
     a = b = c = d = e = 0;
+    #pragma unused(a)
 }
 
 
@@ -159,6 +160,7 @@ u_int8_t finalcount[8];
     }
     /* Wipe variables */
     i = j = 0;
+    #pragma unused(i)
     memset(context->buffer, 0, 64);
     memset(context->state, 0, 20);
     memset(context->count, 0, 8);
