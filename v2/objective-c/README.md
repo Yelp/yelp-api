@@ -1,22 +1,24 @@
 # Yelp API v2 Objective-C code sample
 
 ## Overview
-This program demonstrates the capability of the Yelp API version 2.0
-by using the Search API to query for businesses by a search term and location,
-and the Business API to query additional information about the top result
-from the search query.
+
+This program demonstrates the capability of the Yelp API version 2.0 in two ways:
+
+- It uses the Search API to query for businesses by a search term and location.
+- It uses the Business API to query additional information about the top result from the search query.
 
 ## Steps to run
 
 Open the project with Xcode and do the following steps:
 
-- Add your developer keys at the top of the NSURLRequest+OAuth.m file. You can find those keys in the section "[Manage your Keys](http://www.yelp.com/developers/manage_api_keys)" on Yelp's developer site.
+- Add your developer keys at the top of NSURLRequest+OAuth.m. These keys can be found in the section "[Manage your Keys](http://www.yelp.com/developers/manage_api_keys)" on Yelp's developer site.
 
-- You can change the default term and location this program will be using in the main method of this program, under the strings `defaultTerm` and `defaultLocation`.
+- Optionally, change the default term and location used in the sample search by editing the following variables in the main methond in main.m: `defaultTerm` and `defaultLocation`. These variables can also be overridden via command line options.
 
-- Alternatively, you can edit the command line arguments if needed using the shortcut "Cmd + <" and then run the program in Xcode. The default pattern of the command line arguments that you want to give is: `-term 'the term here' -location 'the location here'`.
+## Command Line Options
 
-
+- `-term <term>`
+- `-location <location>`
 
 ## More details
 
