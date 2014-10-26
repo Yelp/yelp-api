@@ -91,7 +91,7 @@ namespace YelpAPI
 
             foreach (var queryParam in queryParams)
             {
-                query[queryParam.Key] = SimpleOAuth.Utilities.UrlHelper.Encode(queryParam.Value);
+                query[queryParam.Key] = queryParam.Value;
             }
 
             var uriBuilder = new UriBuilder(baseURL);
