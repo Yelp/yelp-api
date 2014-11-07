@@ -33,7 +33,7 @@
 + (id)loadSetting:(const NSString *)name provider:(const NSString *)provider prefix:(const NSString *)prefix;
 + (void)saveSetting:(NSString *)name object:(id)object provider:(const NSString *)provider prefix:(const NSString *)prefix;
 + (NSNumber *)durationWithString:(NSString *)aDuration;
-+ (NSDictionary *)attributesWithString:(NSString *)theAttributes;
++ (NSMutableDictionary *)attributesWithString:(NSString *)theAttributes;
 
 @end
 
@@ -53,7 +53,7 @@
 }
 
 - (id)initWithKey:(NSString *)aKey secret:(NSString *)aSecret session:(NSString *)aSession
-		 duration:(NSNumber *)aDuration attributes:(NSDictionary *)theAttributes created:(NSDate *)creation
+		 duration:(NSNumber *)aDuration attributes:(NSMutableDictionary *)theAttributes created:(NSDate *)creation
 		renewable:(BOOL)renew {
 	self = [super init];
 	self.key = aKey;
@@ -165,7 +165,7 @@
 	[attributes setObject: aAttribute forKey: aKey];
 }
 
-- (void)setAttributes:(NSDictionary *)theAttributes {
+- (void)setAttributes:(NSMutableDictionary *)theAttributes {
 	if (theAttributes) {
 		attributes = [[NSMutableDictionary alloc] initWithDictionary:theAttributes];
 	}else {
@@ -296,7 +296,7 @@
 	return [NSNumber numberWithInt: mult * [[aDuration substringToIndex:length - 1] intValue]];
 }
 
-+ (NSDictionary *)attributesWithString:(NSString *)theAttributes {
++ (NSMutableDictionary *)attributesWithString:(NSString *)theAttributes {
 	NSArray *attrs = [theAttributes componentsSeparatedByString:@";"];
 	NSMutableDictionary *dct = [[NSMutableDictionary alloc] init];
 	for (NSString *pair in attrs) {

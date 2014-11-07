@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-extern const NSString * kConsumerKey;
-extern const NSString * kConsumerSecret;
-extern const NSString * kToken;
-extern const NSString * kTokenSecret;
+extern NSString* const kConsumerKey;
+extern NSString* const kConsumerSecret;
+extern NSString* const kToken;
+extern NSString* const kTokenSecret;
 
 @interface YourKeysAndTokens : NSObject
 

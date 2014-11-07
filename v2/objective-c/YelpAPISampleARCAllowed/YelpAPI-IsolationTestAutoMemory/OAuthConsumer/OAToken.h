@@ -40,7 +40,7 @@
 @property(retain, readwrite) NSString *secret;
 @property(retain, readwrite) NSString *session;
 @property(retain, readwrite) NSNumber *duration;
-@property(retain, readwrite) NSMutableDictionary *attributes;
+@property(strong, readwrite, nonatomic) NSMutableDictionary *attributes;
 @property(readwrite, getter=isForRenewal) BOOL forRenewal;
 
 - (id)initWithKey:(NSString *)aKey secret:(NSString *)aSecret;
@@ -67,6 +67,6 @@
 
 - (BOOL)isEqualToToken:(OAToken *)aToken;
 
-+ (void)removeFromUserDefaultsWithServiceProviderName:(const NSString *)provider prefix:(const NSString *)prefix;
++ (void)removeFromUserDefaultsWithServiceProviderName:(NSString * const)provider prefix:(NSString * const )prefix;
 
 @end

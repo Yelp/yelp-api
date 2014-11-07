@@ -8,10 +8,10 @@
 
 #import "YourKeysAndTokens.h"
 
-const NSString * kConsumerKey       = @"";
-const NSString * kConsumerSecret    = @"";
-const NSString * kToken             = @"";
-const NSString * kTokenSecret       = @"";
+NSString* const kConsumerKey       = @"";
+NSString* const kConsumerSecret    = @"";
+NSString* const kToken             = @"";
+NSString* const kTokenSecret       = @"";
 
 @implementation YourKeysAndTokens
 
