@@ -1,0 +1,6 @@
+*Please input your own Consumer Key/Secret and Token Key/Secret into YourKeysAndTokens.m before running
+*In a successful case, you should see Yelp JSON data come back and show up in the console
+
+*I'm aware of the numerous leak errors you see above but haven't had the courage to tackle them. Just wanted a version that works with ARC. Do let me know if there are good ways of solving them.
+
+- TB 2014 

@@ -34,6 +34,7 @@
 		AAD44F291A0D21E300FDB656 /* OATokenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD44F171A0D21E300FDB656 /* OATokenManager.m */; };
 		AAD44F2B1A0D26FE00FDB656 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD44F2A1A0D26FE00FDB656 /* CoreLocation.framework */; };
 		AAD44F301A0D2E2600FDB656 /* YourKeysAndTokens.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD44F2F1A0D2E2600FDB656 /* YourKeysAndTokens.m */; };
+		AAD44F321A0D33C800FDB656 /* README in Resources */ = {isa = PBXBuildFile; fileRef = AAD44F311A0D33C800FDB656 /* README */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		AAD44F2A1A0D26FE00FDB656 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		AAD44F2E1A0D2E2600FDB656 /* YourKeysAndTokens.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YourKeysAndTokens.h; sourceTree = "<group>"; };
 		AAD44F2F1A0D2E2600FDB656 /* YourKeysAndTokens.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YourKeysAndTokens.m; sourceTree = "<group>"; };
+		AAD44F311A0D33C800FDB656 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				AAD44ECB1A0D217300FDB656 /* AppDelegate.m */,
 				AAD44ECD1A0D217300FDB656 /* ViewController.h */,
 				AAD44ECE1A0D217300FDB656 /* ViewController.m */,
+				AAD44F311A0D33C800FDB656 /* README */,
 				AAD44ED01A0D217300FDB656 /* Main.storyboard */,
 				AAD44ED31A0D217300FDB656 /* Images.xcassets */,
 				AAD44ED51A0D217300FDB656 /* LaunchScreen.xib */,
@@ -268,6 +271,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAD44F321A0D33C800FDB656 /* README in Resources */,
 				AAD44ED21A0D217300FDB656 /* Main.storyboard in Resources */,
 				AAD44ED71A0D217300FDB656 /* LaunchScreen.xib in Resources */,
 				AAD44ED41A0D217300FDB656 /* Images.xcassets in Resources */,
