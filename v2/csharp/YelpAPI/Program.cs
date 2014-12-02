@@ -229,7 +229,14 @@ namespace YelpAPI
             }
             catch (WebException error)
             {
+                if (error.Response != null)
+                    using (var reader = new StreamReader(error.Response.GetResponseStream()))
+                    {
+                        Console.Error.WriteLine("Response returned: {0}", reader.ReadToEnd());
+                    }
+
                 Console.Error.WriteLine("HTTP request failed, got {0}, abort program.", error.Message);
+
                 Environment.Exit(-1);
             }
         }
