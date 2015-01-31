@@ -54,7 +54,7 @@ def request(host, path, url_params=None):
         urllib2.HTTPError: An error occurs from the HTTP request.
     """
     url_params = url_params or {}
-    url = 'http://{0}{1}?'.format(host, path)
+    url = 'http://{0}{1}?'.format(host, urllib.quote(path.encode('utf8')))
 
     consumer = oauth2.Consumer(CONSUMER_KEY, CONSUMER_SECRET)
     oauth_request = oauth2.Request(method="GET", url=url, parameters=url_params)
@@ -71,7 +71,7 @@ def request(host, path, url_params=None):
     oauth_request.sign_request(oauth2.SignatureMethod_HMAC_SHA1(), consumer, token)
     signed_url = oauth_request.to_url()
     
-    print 'Querying {0} ...'.format(url)
+    print u'Querying {0} ...'.format(url)
 
     conn = urllib2.urlopen(signed_url, None)
     try:
@@ -124,19 +124,19 @@ def query_api(term, location):
     businesses = response.get('businesses')
 
     if not businesses:
-        print 'No businesses for {0} in {1} found.'.format(term, location)
+        print u'No businesses for {0} in {1} found.'.format(term, location)
         return
 
     business_id = businesses[0]['id']
 
-    print '{0} businesses found, querying business info for the top result "{1}" ...'.format(
+    print u'{0} businesses found, querying business info for the top result "{1}" ...'.format(
         len(businesses),
         business_id
     )
 
     response = get_business(business_id)
 
-    print 'Result for business "{0}" found:'.format(business_id)
+    print u'Result for business "{0}" found:'.format(business_id)
     pprint.pprint(response, indent=2)
 
 
