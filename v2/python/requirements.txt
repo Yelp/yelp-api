@@ -1,2 +1,8 @@
-oauth2==1.0
+beautifulsoup4==4.4.0
+gevent==1.0.2
+greenlet==0.4.7
 httplib2==0.9
+oauth2==1.0.0
+requests==2.7.0
+simplejson==3.8.0
+wsgiref==0.1.2
