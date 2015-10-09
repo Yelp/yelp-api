@@ -54,7 +54,7 @@ def request(host, path, url_params=None):
         urllib2.HTTPError: An error occurs from the HTTP request.
     """
     url_params = url_params or {}
-    url = 'http://{0}{1}?'.format(host, urllib.quote(path.encode('utf8')))
+    url = 'https://{0}{1}?'.format(host, urllib.quote(path.encode('utf8')))
 
     consumer = oauth2.Consumer(CONSUMER_KEY, CONSUMER_SECRET)
     oauth_request = oauth2.Request(method="GET", url=url, parameters=url_params)
