@@ -62,7 +62,7 @@ static NSString * const kTokenSecret       = @"";
   }
 
   NSURLComponents *components = [[NSURLComponents alloc] init];
-  components.scheme = @"http";
+  components.scheme = @"https";
   components.host = host;
   components.path = path;
   components.query = [queryParts componentsJoinedByString:@"&"];
