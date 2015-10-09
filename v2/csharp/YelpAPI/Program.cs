@@ -56,7 +56,7 @@ namespace YelpAPI
         /// <summary>
         /// Host of the API.
         /// </summary>
-        private const string API_HOST = "http://api.yelp.com";
+        private const string API_HOST = "https://api.yelp.com";
 
         /// <summary>
         /// Relative path for the Search API.

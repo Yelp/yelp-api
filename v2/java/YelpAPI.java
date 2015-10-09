@@ -98,7 +98,7 @@ public class YelpAPI {
    * @return <tt>OAuthRequest</tt>
    */
   private OAuthRequest createOAuthRequest(String path) {
-    OAuthRequest request = new OAuthRequest(Verb.GET, "http://" + API_HOST + path);
+    OAuthRequest request = new OAuthRequest(Verb.GET, "https://" + API_HOST + path);
     return request;
   }
 
