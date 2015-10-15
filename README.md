@@ -21,3 +21,7 @@ For the official Ruby client library, we have [yelp-ruby](https://github.com/yel
 #### Node.js
 
 [node-yelp](https://github.com/Yelp/yelp-api/tree/master/v2/node.js)
+
+#### Python
+
+[yelp-python-v2](https://github.com/mathisonian/python-yelp-v2)
