@@ -9,13 +9,14 @@ use Net::OAuth;
 $Net::OAuth::PROTOCOL_VERSION = Net::OAuth::PROTOCOL_VERSION_1_0;
 use HTTP::Request::Common;
 my $ua = LWP::UserAgent->new;
+use Mozilla::CA;
 
 sub consumer_key { 'insert consumer key here' }
 sub consumer_secret { 'insert consumer secret here' }
 sub access_token { 'insert access token here' }
 sub access_token_secret { 'insert access token secret here' }
 
-sub user_url { 'http://api.yelp.com/v2/search?term=food&location=San+Francisco' }
+sub user_url { 'https://api.yelp.com/v2/search?term=food&location=San+Francisco' }
 
 my $request =
         Net::OAuth->request('protected resource')->new(

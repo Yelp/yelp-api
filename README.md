@@ -1,4 +1,23 @@
-Yelp API Examples
-=================
+# Yelp API
 
-Examples and libraries for working with the Yelp API.
+The Yelp API gives you access to search for over 50,000,000 businesses in 32 countries. We provide a [search](https://www.yelp.com/developers/documentation/v2/search_api), [phone search](https://www.yelp.com/developers/documentation/v2/phone_search), and [business](https://www.yelp.com/developers/documentation/v2/business) API to help integrate Yelp into your app.
+
+For complete documentation and instructions on how to authenticate visit the [developer site](https://www.yelp.com/developers).
+
+## Clientlibs
+
+### Official
+
+#### Ruby
+
+For the official Ruby client library, we have [yelp-ruby](https://github.com/yelp/yelp-ruby). The [sample Rails app](https://github.com/yelp/yelp-rails-example) will show you how to get setup if you need a little more guidance.
+
+### Unofficial
+
+#### Go
+
+[go-yelp](https://github.com/JustinBeckwith/go-yelp)
+
+#### Node.js
+
+[node-yelp](https://github.com/Yelp/yelp-api/tree/master/v2/node.js)
