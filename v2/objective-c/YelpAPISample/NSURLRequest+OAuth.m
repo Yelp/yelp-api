@@ -7,7 +7,7 @@
 //
 
 #import "NSURLRequest+OAuth.h"
-#import "OAMutableURLRequest.h"
+#import "YPMutableURLRequest.h"
 
 /**
  OAuth credential placeholders that must be filled by each user in regards to
@@ -32,13 +32,10 @@ static NSString * const kTokenSecret       = @"";
     NSLog(@"WARNING: Please enter your api v2 credentials before attempting any API request. You can do so in NSURLRequest+OAuth.m");
   }
 
-  OAConsumer *consumer = [[OAConsumer alloc] initWithKey:kConsumerKey secret:kConsumerSecret];
-  OAToken *token = [[OAToken alloc] initWithKey:kToken secret:kTokenSecret];
+  YPConsumer *consumer = [[YPConsumer alloc] initWithKey:kConsumerKey secret:kConsumerSecret];
+  YPToken *token = [[YPToken alloc] initWithKey:kToken secret:kTokenSecret];
 
-  //The signature provider is HMAC-SHA1 by default and the nonce and timestamp are generated in the method
-  OAMutableURLRequest *request = [[OAMutableURLRequest alloc] initWithURL:URL consumer:consumer token:token realm:nil signatureProvider:nil];
-  [request setHTTPMethod:@"GET"];
-  [request prepare]; // Attaches our consumer and token credentials to the request
+  YPMutableURLRequest *request = [[YPMutableURLRequest alloc] initWithURL:URL token:token consumer:consumer realm:nil signatureProvider:nil];
 
   return request;
 }
