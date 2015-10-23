@@ -17,3 +17,11 @@ Run the code sample without specifying any arguments:
 
 Run the code sample by specifying the optional arguments:
 `./run.sh --term "bars" --location "San Francisco, CA"`
+
+## Steps to run on Windows
+
+Run the code sample without specifying any arguments:
+`.\run.bat`
+
+Run the code sample by specifying the optional arguments:
+`.\run.bat --term "bars" --location "San Francisco, CA"`
