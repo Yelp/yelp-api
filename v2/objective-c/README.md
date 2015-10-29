@@ -9,7 +9,17 @@ This program demonstrates the capability of the Yelp API version 2.0 in two ways
 
 ## Steps to run
 
-Open the project with Xcode and do the following steps:
+- This sample uses CocoaPods for managing dependencies. If you haven't used CocoaPods, [install it following the instructions from the CocoaPods website](https://guides.cocoapods.org/using/getting-started.html#getting-started).
+
+- Set up the dependencies by running:
+```
+$ pod install
+```
+
+- Open the workspace, *not the project*.
+```
+$ open YelpAPISample.xcworkspace
+```
 
 - Add your developer keys at the top of NSURLRequest+OAuth.m. These keys can be found in the section "[Manage your Keys](http://www.yelp.com/developers/manage_api_keys)" on Yelp's developer site.
 
