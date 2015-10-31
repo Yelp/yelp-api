@@ -24,10 +24,6 @@ Please note that we do not provide support for any of the unofficial libraries, 
 
 [go-yelp](https://github.com/JustinBeckwith/go-yelp)
 
-#### Node.js
-
-[node-yelp](https://github.com/Yelp/yelp-api/tree/master/v2/node.js)
-
 #### Python
 
 [yelp-python-v2](https://github.com/mathisonian/python-yelp-v2)
