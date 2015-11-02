@@ -26,7 +26,7 @@ Please note that we do not provide support for any of the unofficial libraries, 
 
 #### Node.js
 
-[node-yelp](https://github.com/Yelp/yelp-api/tree/master/v2/node.js)
+[node-yelp](https://github.com/olalonde/node-yelp)
 
 #### Python
 
