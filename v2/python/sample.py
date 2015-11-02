@@ -23,6 +23,10 @@ import urllib
 import urllib2
 
 import oauth2
+import sys
+
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 
 API_HOST = 'api.yelp.com'
