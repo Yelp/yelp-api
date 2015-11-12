@@ -8,6 +8,10 @@ For complete documentation and instructions on how to authenticate visit the [de
 
 ### Official
 
+#### Python
+
+For the official Python client library, we have [yelp-python](https://github.com/yelp/yelp-python).
+
 #### Ruby
 
 For the official Ruby client library, we have [yelp-ruby](https://github.com/yelp/yelp-ruby). The [sample Rails app](https://github.com/yelp/yelp-rails-example) will show you how to get setup if you need a little more guidance.
