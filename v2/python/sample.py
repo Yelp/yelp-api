@@ -70,7 +70,7 @@ def request(host, path, url_params=None):
     token = oauth2.Token(TOKEN, TOKEN_SECRET)
     oauth_request.sign_request(oauth2.SignatureMethod_HMAC_SHA1(), consumer, token)
     signed_url = oauth_request.to_url()
-    
+
     print u'Querying {0} ...'.format(url)
 
     conn = urllib2.urlopen(signed_url, None)
@@ -80,6 +80,7 @@ def request(host, path, url_params=None):
         conn.close()
 
     return response
+
 
 def search(term, location):
     """Query the Search API by a search term and location.
@@ -91,13 +92,14 @@ def search(term, location):
     Returns:
         dict: The JSON response from the request.
     """
-    
+
     url_params = {
         'term': term.replace(' ', '+'),
         'location': location.replace(' ', '+'),
         'limit': SEARCH_LIMIT
     }
     return request(API_HOST, SEARCH_PATH, url_params=url_params)
+
 
 def get_business(business_id):
     """Query the Business API by a business ID.
@@ -111,6 +113,7 @@ def get_business(business_id):
     business_path = BUSINESS_PATH + business_id
 
     return request(API_HOST, business_path)
+
 
 def query_api(term, location):
     """Queries the API by the input values from the user.
