@@ -18,9 +18,9 @@ For the official Ruby client library, we have [yelp-ruby](https://github.com/yel
 
 ### Unofficial
 
-Please note that we do not provide support for any of the unofficial libraries, these are provided to you as-is. If you have any problems with them, please open an issue on the project itself. 
+Please note that we do not provide support for any of the unofficial libraries, these are provided to you as-is. If you have any problems with them, please open an issue on the project itself.
 
-#### C\# 
+#### C\#
 
 [yelpsharp](https://github.com/JustinBeckwith/yelpsharp)
 
