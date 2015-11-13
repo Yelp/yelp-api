@@ -39,7 +39,7 @@ TOKEN = None
 TOKEN_SECRET = None
 
 
-def request(host, path, url_params=None):
+def request(host, path, url_params={}):
     """Prepares OAuth authentication and sends the request to the API.
 
     Args:
@@ -53,7 +53,6 @@ def request(host, path, url_params=None):
     Raises:
         urllib2.HTTPError: An error occurs from the HTTP request.
     """
-    url_params = url_params or {}
     url = 'https://{0}{1}?'.format(host, urllib.quote(path.encode('utf8')))
 
     consumer = oauth2.Consumer(CONSUMER_KEY, CONSUMER_SECRET)
