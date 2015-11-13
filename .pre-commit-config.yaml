@@ -6,5 +6,6 @@
     -   id: check-yaml
     -   id: check-xml
     -   id: debug-statements
+    -   id: end-of-file-fixer
     -   id: flake8
     -   id: trailing-whitespace
