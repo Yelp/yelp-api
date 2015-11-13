@@ -1,0 +1,11 @@
+-   repo: git://github.com/pre-commit/pre-commit-hooks
+    sha: 29bf11d13689a0a9a895c41eb3591c7e942d377d
+    hooks:
+    -   id: autopep8-wrapper
+    -   id: check-json
+    -   id: check-yaml
+    -   id: check-xml
+    -   id: debug-statements
+    -   id: end-of-file-fixer
+    -   id: flake8
+    -   id: trailing-whitespace

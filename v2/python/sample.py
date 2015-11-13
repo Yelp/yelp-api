@@ -7,7 +7,8 @@ by using the Search API to query for businesses by a search term and location,
 and the Business API to query additional information about the top result
 from the search query.
 
-Please refer to http://www.yelp.com/developers/documentation for the API documentation.
+Please refer to http://www.yelp.com/developers/documentation for the API
+documentation.
 
 This program requires the Python oauth2 library, which you can install via:
 `pip install -r requirements.txt`.
@@ -57,7 +58,8 @@ def request(host, path, url_params=None):
     url = 'https://{0}{1}?'.format(host, urllib.quote(path.encode('utf8')))
 
     consumer = oauth2.Consumer(CONSUMER_KEY, CONSUMER_SECRET)
-    oauth_request = oauth2.Request(method="GET", url=url, parameters=url_params)
+    oauth_request = oauth2.Request(
+        method="GET", url=url, parameters=url_params)
 
     oauth_request.update(
         {
@@ -68,7 +70,8 @@ def request(host, path, url_params=None):
         }
     )
     token = oauth2.Token(TOKEN, TOKEN_SECRET)
-    oauth_request.sign_request(oauth2.SignatureMethod_HMAC_SHA1(), consumer, token)
+    oauth_request.sign_request(
+        oauth2.SignatureMethod_HMAC_SHA1(), consumer, token)
     signed_url = oauth_request.to_url()
 
     print u'Querying {0} ...'.format(url)
@@ -132,11 +135,9 @@ def query_api(term, location):
 
     business_id = businesses[0]['id']
 
-    print u'{0} businesses found, querying business info for the top result "{1}" ...'.format(
-        len(businesses),
-        business_id
-    )
-
+    print u'{0} businesses found, querying business info ' \
+        'for the top result "{1}" ...'.format(
+            len(businesses), business_id)
     response = get_business(business_id)
 
     print u'Result for business "{0}" found:'.format(business_id)
@@ -146,15 +147,19 @@ def query_api(term, location):
 def main():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('-q', '--term', dest='term', default=DEFAULT_TERM, type=str, help='Search term (default: %(default)s)')
-    parser.add_argument('-l', '--location', dest='location', default=DEFAULT_LOCATION, type=str, help='Search location (default: %(default)s)')
+    parser.add_argument('-q', '--term', dest='term', default=DEFAULT_TERM,
+                        type=str, help='Search term (default: %(default)s)')
+    parser.add_argument('-l', '--location', dest='location',
+                        default=DEFAULT_LOCATION, type=str,
+                        help='Search location (default: %(default)s)')
 
     input_values = parser.parse_args()
 
     try:
         query_api(input_values.term, input_values.location)
     except urllib2.HTTPError as error:
-        sys.exit('Encountered HTTP error {0}. Abort program.'.format(error.code))
+        sys.exit(
+            'Encountered HTTP error {0}. Abort program.'.format(error.code))
 
 
 if __name__ == '__main__':
