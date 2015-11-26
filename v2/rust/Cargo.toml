@@ -1,0 +1,8 @@
+[package]
+name = "yelp-api-sample"
+version = "0.1.0"
+
+[dependencies]
+hyper = "0.7"
+oauthcli = "0.0"
+serde_json = "0.6"
