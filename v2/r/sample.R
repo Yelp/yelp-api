@@ -29,27 +29,52 @@ consumerSecret = ""
 token = ""
 token_secret = ""
 
-# Use OAuth to authorize your request.
-myapp = oauth_app("YELP", key=consumerKey, secret=consumerSecret)
-sig = sign_oauth1.0(myapp, token=token,token_secret=token_secret)
+yelp_query <- function(path, query_args) {
+  # Use OAuth to authorize your request.
+  myapp <- oauth_app("YELP", key=consumerKey, secret=consumerSecret)
+  sig <- sign_oauth1.0(myapp, token=token, token_secret=token_secret)
 
-# Dinner in Boston
-# TODO (kmitton): quote query string.
-yelpurl <- paste0("http://api.yelp.com/v2/search/?term=dinner&location=Boston%20MA&limit=3")
-print(yelpurl)
+  # Dinner in Boston
+  # TODO (kmitton): quote query string.
+  scheme <- "https"
+  host <- "api.yelp.com"
+  yelpurl <- paste0(scheme, "://", host, path)
 
-# Make request.
-locationdata=GET(yelpurl, sig)
+  # Make request.
+  results <- GET(yelpurl, sig, query=query_args)
 
-# If status not success, print some debugging output.
-HTTP_SUCCESS <- 200
-if (locationdata$status != HTTP_SUCCESS) {
-    print(locationdata)
+  # If status not success, print some debugging output.
+  HTTP_SUCCESS <- 200
+  if (results$status != HTTP_SUCCESS) {
+      print(results)
+  }
+  return(results)
 }
 
-# Load data.  Flip it around to get an easy-to-handle list.
-locationdataContent = content(locationdata)
-locationdataList=jsonlite::fromJSON(toJSON(locationdataContent))
+yelp_search <- function() {
+  # Use OAuth to authorize your request.
+  myapp = oauth_app("YELP", key=consumerKey, secret=consumerSecret)
+  sig = sign_oauth1.0(myapp, token=token, token_secret=token_secret)
 
-# Print output.
-print(head(data.frame(locationdataList)))
+  # Dinner in Boston
+  # TODO (kmitton): quote query string.
+  path <- paste0("/v2/search/")
+  query_args <- list(term="dinner", location="Boston, MA")
+
+  # Make request.
+  results <- yelp_query(path, query_args)
+  return(results)
+}
+
+print_search_results <- function(yelp_search_result) {
+  # Load data.  Flip it around to get an easy-to-handle list.
+  locationdataContent = content(yelp_search_result)
+  locationdataList=jsonlite::fromJSON(toJSON(locationdataContent))
+
+  # Print output.
+  print(head(data.frame(locationdataList)))
+}
+
+# Query Yelp API, print results.
+yelp_search_result <- yelp_search()
+print_search_results(yelp_search_result)
