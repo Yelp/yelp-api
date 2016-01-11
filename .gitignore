@@ -1,6 +1,7 @@
 *~
 .tmp_credentials
 *.pyc
+*.swp
 backup
 build
 *.pbxuser
