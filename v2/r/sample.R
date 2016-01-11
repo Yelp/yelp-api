@@ -50,10 +50,9 @@ yelp_query <- function(path, query_args) {
   return(results)
 }
 
-yelp_search <- function(term="dinner", location="Boston, MA", limit=3) {
-  # Default to searching for Dinner in Boston.
+yelp_search <- function(term, location, limit=10) {
   # Search term and location go in the query string.
-  path <- paste0("/v2/search/")
+  path <- "/v2/search/"
   query_args <- list(term=term, location=location, limit=limit)
 
   # Make request.
@@ -88,7 +87,7 @@ print_business_results <- function(yelp_business_result) {
 
 demo <- function() {
   # Query Yelp API, print results.
-  yelp_search_result <- yelp_search()
+  yelp_search_result <- yelp_search(term="dinner", location="Boston, MA", limit=3)
   print_search_results(yelp_search_result)
 
   # Pick the top search result, get more info about it.
