@@ -8,6 +8,9 @@ For complete documentation and instructions on how to authenticate visit the [de
 
 ### Official
 
+#### Android
+The official Android client library is [yelp-android](https://github.com/yelp/yelp-android) and will help integrate Yelp with Android phones.
+
 #### Python
 
 For the official Python client library, we have [yelp-python](https://github.com/yelp/yelp-python).
