@@ -72,11 +72,27 @@ function request($host, $path) {
     $signed_url = $oauthrequest->to_url();
     
     // Send Yelp API Call
-    $ch = curl_init($signed_url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_HEADER, 0);
-    $data = curl_exec($ch);
-    curl_close($ch);
+    try {
+        $ch = curl_init($signed_url);
+        if (FALSE === $ch)
+            throw new Exception('Failed to initialize');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        $data = curl_exec($ch);
+
+        if (FALSE === $data)
+            throw new Exception(curl_error($ch), curl_errno($ch));
+        $http_status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        if (200 != $http_status)
+            throw new Exception("HTTP Status was not SUCCESS", $http_status);
+
+        curl_close($ch);
+    } catch(Exception $e) {
+        trigger_error(sprintf(
+            'Curl failed with error #%d: %s',
+            $e->getCode(), $e->getMessage()),
+            E_USER_ERROR);
+    }
     
     return $data;
 }
