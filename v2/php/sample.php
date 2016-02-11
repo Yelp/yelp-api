@@ -84,7 +84,7 @@ function request($host, $path) {
             throw new Exception(curl_error($ch), curl_errno($ch));
         $http_status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         if (200 != $http_status)
-            throw new Exception("HTTP Status was not SUCCESS", $http_status);
+            throw new Exception($data, $http_status);
 
         curl_close($ch);
     } catch(Exception $e) {
