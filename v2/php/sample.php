@@ -122,7 +122,7 @@ function search($term, $location) {
  * @return   The JSON response from the request 
  */
 function get_business($business_id) {
-    $business_path = $GLOBALS['BUSINESS_PATH'] . $business_id;
+    $business_path = $GLOBALS['BUSINESS_PATH'] . urlencode($business_id);
     
     return request($GLOBALS['API_HOST'], $business_path);
 }
