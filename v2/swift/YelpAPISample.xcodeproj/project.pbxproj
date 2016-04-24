@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		13146E3E1CCC52A70063663E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13146E3D1CCC52A70063663E /* main.swift */; };
+		34FE7E608C6A72C0435EFAEF /* libPods-YelpAPISample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E247E3E200EF355B636624 /* libPods-YelpAPISample.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,10 @@
 /* Begin PBXFileReference section */
 		13146E3A1CCC52A70063663E /* YelpAPISample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = YelpAPISample; sourceTree = BUILT_PRODUCTS_DIR; };
 		13146E3D1CCC52A70063663E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		13D2539C1CE6905000108FC3 /* YelpAPISample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YelpAPISample-Bridging-Header.h"; sourceTree = "<group>"; };
+		66641F72672663DD130B9224 /* Pods-YelpAPISample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YelpAPISample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YelpAPISample/Pods-YelpAPISample.debug.xcconfig"; sourceTree = "<group>"; };
+		98E247E3E200EF355B636624 /* libPods-YelpAPISample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YelpAPISample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFC760E7924164CD0D3CC65A /* Pods-YelpAPISample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YelpAPISample.release.xcconfig"; path = "Pods/Target Support Files/Pods-YelpAPISample/Pods-YelpAPISample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34FE7E608C6A72C0435EFAEF /* libPods-YelpAPISample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,7 +48,10 @@
 			isa = PBXGroup;
 			children = (
 				13146E3D1CCC52A70063663E /* main.swift */,
+				13D2539C1CE6905000108FC3 /* YelpAPISample-Bridging-Header.h */,
 				13146E3B1CCC52A70063663E /* Products */,
+				BB755CEC5B81C2616C582BE7 /* Pods */,
+				DCEA52B3853749E0BB7395C5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +63,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		BB755CEC5B81C2616C582BE7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				66641F72672663DD130B9224 /* Pods-YelpAPISample.debug.xcconfig */,
+				BFC760E7924164CD0D3CC65A /* Pods-YelpAPISample.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DCEA52B3853749E0BB7395C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				98E247E3E200EF355B636624 /* libPods-YelpAPISample.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -61,9 +87,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13146E411CCC52A70063663E /* Build configuration list for PBXNativeTarget "YelpAPISample" */;
 			buildPhases = (
+				125A23FFE50D70F54A00EB60 /* 📦 Check Pods Manifest.lock */,
 				13146E361CCC52A70063663E /* Sources */,
 				13146E371CCC52A70063663E /* Frameworks */,
 				13146E381CCC52A70063663E /* CopyFiles */,
+				8EEE234EE42E233AC560D397 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -105,6 +133,39 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		125A23FFE50D70F54A00EB60 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8EEE234EE42E233AC560D397 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YelpAPISample/Pods-YelpAPISample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		13146E361CCC52A70063663E /* Sources */ = {
@@ -202,15 +263,24 @@
 		};
 		13146E421CCC52A70063663E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66641F72672663DD130B9224 /* Pods-YelpAPISample.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "YelpAPISample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		13146E431CCC52A70063663E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFC760E7924164CD0D3CC65A /* Pods-YelpAPISample.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "YelpAPISample-Bridging-Header.h";
 			};
 			name = Release;
 		};
