@@ -4,9 +4,14 @@ The Yelp API gives you access to search for over 50,000,000 businesses in 32 cou
 
 For complete documentation and instructions on how to authenticate visit the [developer site](https://www.yelp.com/developers).
 
+For problems with the API, the samples, or just questions, please open an issue on this project.
+
 ## Clientlibs
 
 ### Official
+
+#### iOS
+The official iOS client library is [yelp-ios](https://github.com/Yelp/yelp-ios).
 
 #### Android
 The official Android client library is [yelp-android](https://github.com/yelp/yelp-android) and will help integrate Yelp with Android phones.
