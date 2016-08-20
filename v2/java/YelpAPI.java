@@ -14,14 +14,13 @@ import com.beust.jcommander.Parameter;
 
 /**
  * Code sample for accessing the Yelp API V2.
- * 
+ *
  * This program demonstrates the capability of the Yelp API version 2.0 by using the Search API to
  * query for businesses by a search term and location, and the Business API to query additional
  * information about the top result from the search query.
- * 
+ *
  * <p>
  * See <a href="http://www.yelp.com/developers/documentation">Yelp Documentation</a> for more info.
- * 
  */
 public class YelpAPI {
 
@@ -46,7 +45,7 @@ public class YelpAPI {
 
   /**
    * Setup the Yelp API OAuth credentials.
-   * 
+   *
    * @param consumerKey Consumer key
    * @param consumerSecret Consumer secret
    * @param token Token
@@ -64,7 +63,7 @@ public class YelpAPI {
    * <p>
    * See <a href="http://www.yelp.com/developers/documentation/v2/search_api">Yelp Search API V2</a>
    * for more info.
-   * 
+   *
    * @param term <tt>String</tt> of the search term to be queried
    * @param location <tt>String</tt> of the location
    * @return <tt>String</tt> JSON Response
@@ -82,7 +81,7 @@ public class YelpAPI {
    * <p>
    * See <a href="http://www.yelp.com/developers/documentation/v2/business">Yelp Business API V2</a>
    * for more info.
-   * 
+   *
    * @param businessID <tt>String</tt> business ID of the requested business
    * @return <tt>String</tt> JSON Response
    */
@@ -93,7 +92,7 @@ public class YelpAPI {
 
   /**
    * Creates and returns an {@link OAuthRequest} based on the API endpoint specified.
-   * 
+   *
    * @param path API endpoint to be queried
    * @return <tt>OAuthRequest</tt>
    */
@@ -104,7 +103,7 @@ public class YelpAPI {
 
   /**
    * Sends an {@link OAuthRequest} and returns the {@link Response} body.
-   * 
+   *
    * @param request {@link OAuthRequest} corresponding to the API request
    * @return <tt>String</tt> body of API response
    */
@@ -118,7 +117,7 @@ public class YelpAPI {
   /**
    * Queries the Search API based on the command line arguments and takes the first result to query
    * the Business API.
-   * 
+   *
    * @param yelpApi <tt>YelpAPI</tt> service instance
    * @param yelpApiCli <tt>YelpAPICLI</tt> command line arguments
    */
