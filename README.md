@@ -1,5 +1,8 @@
 # Yelp API
 
+**On June 30, 2018, API v2 will be discontinued and v2 endpoints will no longer work.**
+[Read more.](https://engineeringblog.yelp.com/2017/06/upcoming-deprecation-of-yelp-api-v2.html)
+
 The Yelp API gives you access to search for over 50,000,000 businesses in 32 countries. We provide a [search](https://www.yelp.com/developers/documentation/v2/search_api), [phone search](https://www.yelp.com/developers/documentation/v2/phone_search), and [business](https://www.yelp.com/developers/documentation/v2/business) API to help integrate Yelp into your app.
 
 For complete documentation and instructions on how to authenticate visit the [developer site](https://www.yelp.com/developers).
