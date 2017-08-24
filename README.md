@@ -43,6 +43,10 @@ Please note that we do not provide support for any of the unofficial libraries, 
 
 [node-yelp](https://github.com/olalonde/node-yelp)
 
+#### PHP
+
+[yelp-php](https://github.com/stevenmaguire/yelp-php)
+
 #### Swift
 
 [ios_yelp_swift](https://github.com/codepath/ios_yelp_swift)
